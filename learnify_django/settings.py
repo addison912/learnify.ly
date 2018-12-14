@@ -119,3 +119,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'learnify/templates')
+STATIC_DIR = os.path.join(BASE_DIR, 'learnify/static')
+MEDIA_DIR = os.path.join(BASE_DIR, 'learnify/media')
+STATICFILES_DIRS = [STATIC_DIR, ]
+MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL = '/media/'
