@@ -9,7 +9,6 @@ class UserProfile(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     profile_pic = models.ImageField(upload_to='profile_pics', blank=True)
-    email = models.EmailField(max_length=254)
 
     def __str__(self):
         return self.user.username
@@ -26,6 +25,7 @@ class Courses(models.Model):
     date_updated = models.DateField(auto_now=False, auto_now_add=True)
     owner = models.ForeignKey(
         UserProfile, on_delete=models.CASCADE, related_name='course')
+    preview_video = models.FileField(upload_to='course_videos', blank=True)
 
     def __str__(self):
         return self.title
@@ -33,8 +33,9 @@ class Courses(models.Model):
 
 class Videos(models.Model):
     title = models.CharField(max_length=100)
-    url = models.CharField(max_length=100)
-    description = models.TextField()
+    video = models.FileField(upload_to='course_videos', blank=True)
+    description = models.TextField(blank=True)
+    order_number = models.IntegerField()
     course = models.ForeignKey(
         Courses, on_delete=models.CASCADE, related_name='videos')
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from learnify.models import UserProfile, Courses, Reviews, Purchases, Videos
+from learnify.models import *
 
 admin.site.register(UserProfile)
 admin.site.register(Courses)
