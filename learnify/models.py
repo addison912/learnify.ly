@@ -14,7 +14,7 @@ class UserProfile(models.Model):
         return self.user.username
 
 
-class Courses(models.Model):
+class Course(models.Model):
     title = models.CharField(max_length=100)
     category = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
@@ -25,39 +25,39 @@ class Courses(models.Model):
     date_updated = models.DateField(auto_now=False, auto_now_add=True)
     owner = models.ForeignKey(
         UserProfile, on_delete=models.CASCADE, related_name='course')
-    preview_video = models.FileField(upload_to='course_videos', blank=True)
+    preview_video = models.FileField(upload_to='preview_videos', blank=True)
 
     def __str__(self):
         return self.title
 
 
-class Videos(models.Model):
+class Video(models.Model):
     title = models.CharField(max_length=100)
     video = models.FileField(upload_to='course_videos', blank=True)
     description = models.TextField(blank=True)
     order_number = models.IntegerField()
     course = models.ForeignKey(
-        Courses, on_delete=models.CASCADE, related_name='videos')
+        Course, on_delete=models.CASCADE, related_name='videos')
 
     def __str__(self):
         return self.title
 
 
-class Reviews(models.Model):
+class Review(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField(max_length=1000)
     author = models.ForeignKey(
         UserProfile, on_delete=models.CASCADE, related_name='reviews')
     course = models.ForeignKey(
-        Courses, on_delete=models.CASCADE, related_name='reviews')
+        Course, on_delete=models.CASCADE, related_name='reviews')
 
     def __str__(self):
         return self.title
 
 
-class Purchases(models.Model):
+class Purchase(models.Model):
     course = models.ForeignKey(
-        Courses, on_delete=models.DO_NOTHING, related_name='purchases')
+        Course, on_delete=models.DO_NOTHING, related_name='purchases')
     purchaser = models.ForeignKey(
         UserProfile, on_delete=models.DO_NOTHING, related_name='purchases')
 

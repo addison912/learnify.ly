@@ -1,5 +1,5 @@
 from django import forms
-from learnify.models import UserProfile, Courses, Videos, Reviews
+from learnify.models import *
 from django.contrib.auth.models import User
 
 
@@ -20,7 +20,7 @@ class UserProfileForm(forms.ModelForm):
 
 class CourseForm(forms.ModelForm):
     class Meta():
-        model = Courses
+        model = Course
         fields = ('title', 'category', 'description', 'preview_video')
 
 
