@@ -41,7 +41,8 @@ class Course(models.Model):
     owner = models.ForeignKey(
         UserProfile, on_delete=models.CASCADE, related_name='course')
     preview_video = models.FileField(upload_to='preview_videos', blank=True)
-    preview_video_format = models.CharField(choices=VIDEO_FORMAT, max_length=5)
+    preview_video_format = models.CharField(
+        choices=VIDEO_FORMAT, max_length=20, default='video/webm')
 
     def __str__(self):
         return self.title
@@ -55,7 +56,8 @@ class Video(models.Model):
     ]
     title = models.CharField(max_length=50)
     video = models.FileField(upload_to='course_videos', blank=True)
-    video_format = models.CharField(choices=VIDEO_FORMAT, max_length=5)
+    video_format = models.CharField(
+        choices=VIDEO_FORMAT, max_length=20, default='video/webm')
     description = models.TextField(blank=True)
     order_number = models.IntegerField()
     course = models.ForeignKey(
