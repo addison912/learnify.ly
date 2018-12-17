@@ -9,11 +9,20 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
-
+import sys
 import os
+
+sys.path.append(os.path.abspath(".env/secrets"))
+
+from config import *
+
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -38,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'stripe',
 ]
 
 MIDDLEWARE = [
@@ -78,6 +88,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'learnify',
+        'PASSWORD': 'Soccer1688!'
     }
 }
 
@@ -126,3 +137,7 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'learnify/media')
 STATICFILES_DIRS = [STATIC_DIR, ]
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+
+
+APIKEY = os.environ.get("STRIPE_PUBLISHABLE_KEY")
+SECRET = os.environ.get("STRIPE_SECRET_KEY")

@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from learnify.forms import *
 from learnify.models import *
+from django.conf import settings
 
 
 def index(request):
@@ -12,7 +13,8 @@ def index(request):
 
 def courses(request):
     courses = Course.objects.all()
-    return render(request, 'learnify/courses.html', {'courses': courses})
+    stripe_key = settings.APIKEY
+    return render(request, 'learnify/courses.html', {'courses': courses, 'stripe_key': stripe_key})
 
 
 def course_detail(request):

@@ -17,4 +17,10 @@
         </li>
     {% endfor %}
     </ul>
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="{{stripe_key}}"
+    data-description="Purchase Course"
+    data-amount="999"
+    data-locale="auto">
+</script>
 {% endblock %}
