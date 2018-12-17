@@ -6,8 +6,8 @@ from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
     profile_pic = models.ImageField(upload_to='profile_pics', blank=True)
 
     def __str__(self):
@@ -15,10 +15,20 @@ class UserProfile(models.Model):
 
 
 class Course(models.Model):
-    title = models.CharField(max_length=100)
-    category = models.CharField(max_length=100)
-    description = models.TextField(max_length=1000)
-    price = models.IntegerField()
+    COURSE_CATEGORIES = [
+        ('arts_humanities', 'Arts and Humanities'),
+        ('business', 'Business'),
+        ('computer_science', 'Computer Science'),
+        ('health_fitness', 'Health and Fitness'),
+        ('languages', 'Languages'),
+        ('math_logic', 'Math and Logic'),
+        ('music', 'Music'),
+        ('personal_developement', 'Personal Developement'),
+    ]
+    title = models.CharField(max_length=50)
+    category = models.CharField(choices=COURSE_CATEGORIES, max_length=50)
+    description = models.TextField(max_length=500)
+    price = models.FloatField()
     isFeatured = models.BooleanField(default=False)
     date_created = models.DateField(
         auto_now=True, auto_now_add=False, editable=False)
@@ -32,7 +42,7 @@ class Course(models.Model):
 
 
 class Video(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=50)
     video = models.FileField(upload_to='course_videos', blank=True)
     description = models.TextField(blank=True)
     order_number = models.IntegerField()
@@ -44,8 +54,8 @@ class Video(models.Model):
 
 
 class Review(models.Model):
-    title = models.CharField(max_length=100)
-    body = models.TextField(max_length=1000)
+    title = models.CharField(max_length=50)
+    body = models.TextField(max_length=500)
     author = models.ForeignKey(
         UserProfile, on_delete=models.CASCADE, related_name='reviews')
     course = models.ForeignKey(

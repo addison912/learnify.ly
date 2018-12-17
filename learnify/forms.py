@@ -19,6 +19,7 @@ class UserProfileForm(forms.ModelForm):
 
 
 class CourseForm(forms.ModelForm):
+
     class Meta():
         model = Course
         fields = ('title', 'category', 'description', 'preview_video')
