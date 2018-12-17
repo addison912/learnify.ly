@@ -78,6 +78,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'learnify',
+        'PASSWORD': 'Soccer1688!'
     }
 }
 
@@ -126,3 +127,7 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'learnify/media')
 STATICFILES_DIRS = [STATIC_DIR, ]
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+
+
+STRIPE_SECRET_KEY = 'sk_test_6panpzKzfPNGy3OFbSMz5dyu'
+STRIPE_PUBLISHABLE_KEY = 'pk_test_MP49UhapbiCmOhfy05TNWwOP'
