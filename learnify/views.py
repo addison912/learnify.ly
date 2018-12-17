@@ -7,3 +7,21 @@ from learnify.forms import *
 
 def index(request):
     return render(request, 'learnify/index.html')
+
+
+def courses(request):
+    courses = Course.objects.all()
+    return render(request, 'learnify/courses.html', {'courses': courses})
+
+
+def course_detail(request):
+    course = Course.objects.get(id=pk)
+    return render(request, 'learnify/course_detail.html', {'course': course})
+
+
+def profile(request):
+    return render(request, 'learnify/profile.html')
+
+
+def about(request):
+    return render(request, 'learnify/about.html')
