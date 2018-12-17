@@ -130,5 +130,5 @@ MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
 
-STRIPE_SECRET_KEY = 'sk_test_6panpzKzfPNGy3OFbSMz5dyu'
+
 STRIPE_PUBLISHABLE_KEY = 'pk_test_MP49UhapbiCmOhfy05TNWwOP'
