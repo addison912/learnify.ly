@@ -22,6 +22,17 @@ def course_detail(request):
     return render(request, 'learnify/course_detail.html', {'course': course})
 
 
+def course_create(request):
+    if request.method == 'POST':
+        form = CourseForm(request.POST)
+        if form.is_valid():
+            course = form.save()
+            return redirect('course_detail', pk=course.pk)
+    else:
+        form = CourseForm()
+    return render(request, 'learnify/create_course_form.html', {'form': form})
+
+
 def profile(request):
     return render(request, 'learnify/profile.html')
 

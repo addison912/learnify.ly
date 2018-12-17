@@ -39,7 +39,37 @@ nav ul {
   justify-content: space-evenly;
   align-items: center;
 }
+/*//////////// course create form start ////////////*/
 
+.course-create {
+  width: 100%;
+  background: #bbbbbb;
+  margin: 0;
+  padding: 16px;
+}
+
+.course-create h1 {
+  margin-top: 0;
+}
+
+.course-create input,
+.course-create button,
+.course-create select {
+  height: 24px;
+}
+
+.course-create input,
+.course-create button,
+.course-create textarea {
+  border-style: none;
+  border-radius: 5px;
+  padding: 5px;
+  resize: none;
+}
+
+
+
+/*//////////// course create form end ////////////*/
 /*//////////// course page start ////////////*/
 
 .course-container {
@@ -78,7 +108,7 @@ button.stripe-button-el>span {
 /*//////////// course page end ////////////*/
 /*//////////// footer start ////////////*/
 
-footer {
+/* footer {
   text-align: center;
   background: black;
-}
+} */
