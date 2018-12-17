@@ -18,11 +18,18 @@
         
         <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="{% url 'profile' %}">Profile</a></li>
-        <li><a href="{% url 'user_login' %}">Login</a></li>
+        <!-- {% if user.is_authenticated %} -->
+        <!-- {% else %} -->
+        <img class="forest" src="https://www.w3schools.com/howto/img_forest.jpg" alt="">
+        <!-- <li><a href="{% url 'user_login' %}">Login</a></li> -->
+        <!-- {% endif %} -->
+
       </ul>
     </nav>
     <main class="container">{% block content %} {% endblock %}</main>
     <footer><span>&copy; Learnify 2018</span></footer>
   </body>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="static/js/main.js"></script>
 </html>
