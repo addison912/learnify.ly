@@ -9,11 +9,20 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
-
+import sys
 import os
+
+sys.path.append(os.path.abspath(".env/secrets"))
+
+from config import *
+APIKey = os.environ.get('STRIPE_PUBLISHABLE_KEY')
+Secret = os.environ.get('STRIPE_SECRET_KEY')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -130,5 +139,3 @@ MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
 
-
-STRIPE_PUBLISHABLE_KEY = 'pk_test_MP49UhapbiCmOhfy05TNWwOP'

@@ -4,16 +4,6 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from learnify.forms import *
 from django.conf import settings
-from django.views.generic.base import TemplateView
-
-
-# class CoursesPageView(TemplateView):
-#     template_name = 'courses.html'
-
-#     def get_context_data(self, **kwargs): # new
-#         context = super().get_context_data(**kwargs)
-#         context['key'] = settings.STRIPE_PUBLISHABLE_KEY
-#         return context
 
 
 def index(request):
