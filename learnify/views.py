@@ -12,7 +12,7 @@ def index(request):
 
 def courses(request):
     courses = Course.objects.all()
-    stripe_key = settings.STRIPE_PUBLISHABLE_KEY
+    stripe_key = settings.APIKEY
     return render(request, 'learnify/courses.html', {'courses': courses, 'stripe_key': stripe_key})
 
 

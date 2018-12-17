@@ -15,8 +15,8 @@ import os
 sys.path.append(os.path.abspath(".env/secrets"))
 
 from config import *
-APIKey = os.environ.get('STRIPE_PUBLISHABLE_KEY')
-Secret = os.environ.get('STRIPE_SECRET_KEY')
+
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -139,3 +139,5 @@ MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
 
+APIKEY = os.environ.get("STRIPE_PUBLISHABLE_KEY")
+SECRET = os.environ.get("STRIPE_SECRET_KEY")
