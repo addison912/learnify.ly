@@ -52,15 +52,17 @@ nav ul {
   margin-top: 0;
 }
 
-.course-create input,
-.course-create button,
-.course-create select {
+/*//////////// forms ////////////*/
+
+input,
+button,
+select {
   height: 24px;
 }
 
-.course-create input,
-.course-create button,
-.course-create textarea {
+input,
+button,
+textarea {
   border-style: none;
   border-radius: 5px;
   padding: 5px;
