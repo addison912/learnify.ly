@@ -31,8 +31,3 @@ class VideoForm(forms.ModelForm):
         model = Video
         fields = ('title', 'video', 'description', 'order_number')
 
-class UserProfileInfoForm(forms.ModelForm):
-
-    class Meta():
-        model = UserProfileInfo
-        fields = ('portfolio_site', 'profile_pic')
