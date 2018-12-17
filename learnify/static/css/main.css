@@ -106,6 +106,7 @@ button.stripe-button-el>span {
   background-color: #666666;
   background-image: none;
 }
+
 /* ////////////stripe button end///////////// */
 
 /*//////////// course page end ////////////*/
@@ -115,3 +116,52 @@ button.stripe-button-el>span {
   text-align: center;
   background: black;
 } */
+
+/*///////// About Us Page Start ///////////*/
+.about-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#addison-pic, #harry-pic, #kenny-pic {
+  width:150px;
+  height:150px;
+  border: 5px solid blue;
+  border-radius: 50%;
+}
+
+.about-header {
+  text-align: center;
+  margin-top: 2.5%;
+}
+
+.about-names, .about-container  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.about-container {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  justify-content: space-between;
+}
+
+.about-container {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  text-align: center;
+}
+
+.article1, .article2, .article3 {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+.about-body {
+  margin-bottom: 5%;
+  margin-top: 2.5%;
+}
+
+/*////////// About us page end ////////////////////*/
