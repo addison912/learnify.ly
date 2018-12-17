@@ -1,8 +1,7 @@
 {% extends 'learnify/base.html' %}
 
 {% block content %}
-    <h2>Browse Courses</h2>
-    <ul>
+    <ul class="course-container">
     {% for course in courses %}
         <li class="course-row">
             <video height="300" controls>

@@ -7,6 +7,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+main {
+  padding-top: 64px;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -18,15 +22,37 @@ a {
   color: #333;
 }
 
-nav ul {
-  display: flex;
-  justify-content: space-evenly;
+nav {
+  background: whitesmoke;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  height: 64px;
+  width: 100vw;
 }
 
+nav ul {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/*//////////// course page start ////////////*/
+
+.course-container {
+
+  margin: 0;
+  padding: 12px 0;
+  background: #666
+}
 
 .course-row {
   display: flex;
   height: 300px;
+  margin: 12px 0;
 }
 
 .course-details {
@@ -41,4 +67,12 @@ nav ul {
 
 .course-details p {
   color: whitesmoke;
+}
+
+/*//////////// course page end ////////////*/
+/*//////////// footer start ////////////*/
+
+footer {
+  text-align: center;
+  background: black;
 }
