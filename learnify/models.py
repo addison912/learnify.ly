@@ -25,6 +25,11 @@ class Course(models.Model):
         ('music', 'Music'),
         ('personal_developement', 'Personal Developement'),
     ]
+    VIDEO_FORMAT = [
+        ('video/mp4', 'MP4'),
+        ('video/webm', 'WebM'),
+        ('video/ogg', 'Ogg'),
+    ]
     title = models.CharField(max_length=50)
     category = models.CharField(choices=COURSE_CATEGORIES, max_length=50)
     description = models.TextField(max_length=500)
@@ -36,14 +41,21 @@ class Course(models.Model):
     owner = models.ForeignKey(
         UserProfile, on_delete=models.CASCADE, related_name='course')
     preview_video = models.FileField(upload_to='preview_videos', blank=True)
+    preview_video_format = models.CharField(choices=VIDEO_FORMAT, max_length=5)
 
     def __str__(self):
         return self.title
 
 
 class Video(models.Model):
+    VIDEO_FORMAT = [
+        ('video/mp4', 'MP4'),
+        ('video/webm', 'WebM'),
+        ('video/ogg', 'Ogg'),
+    ]
     title = models.CharField(max_length=50)
     video = models.FileField(upload_to='course_videos', blank=True)
+    video_format = models.CharField(choices=VIDEO_FORMAT, max_length=5)
     description = models.TextField(blank=True)
     order_number = models.IntegerField()
     course = models.ForeignKey(
