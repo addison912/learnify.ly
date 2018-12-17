@@ -9,7 +9,9 @@ body {
 
 ul {
   list-style: none;
+  padding: 0;
 }
+
 
 a {
   text-decoration: none;
@@ -22,4 +24,21 @@ nav ul {
 }
 
 
+.course-row {
+  display: flex;
+  height: 300px;
+}
 
+.course-details {
+  padding: 20px;
+  background: #333;
+}
+
+.course-details h3 {
+  margin: 0;
+  color: whitesmoke;
+}
+
+.course-details p {
+  color: whitesmoke;
+}
