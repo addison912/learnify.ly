@@ -69,6 +69,12 @@ nav ul {
   color: whitesmoke;
 }
 
+button.stripe-button-el,
+button.stripe-button-el>span {
+  background-color: #666666;
+  background-image: none;
+}
+
 /*//////////// course page end ////////////*/
 /*//////////// footer start ////////////*/
 
