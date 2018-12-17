@@ -1,9 +1,12 @@
 {% extends 'learnify/base.html' %}
 
 {% block content %}
-<h2>Browse Courses</h2>
-<h2>Buy for $5.00</h2>
-<script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="" data-description="A Django Charge"
-    data-amount="500" data-locale="auto">
+    <h2>Browse Courses</h2>
+    <h2>Buy for $9.99</h2>
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="{{stripe_key}}"
+    data-description="Purchase Course"
+    data-amount="999"
+    data-locale="auto">
 </script>
 {% endblock %}
