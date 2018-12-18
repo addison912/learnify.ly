@@ -17,7 +17,7 @@
       <li><a href="{% url 'courses' %}">Courses</a></li>
       <li><a href="{% url 'about' %}">About</a></li>
       {% if user.is_authenticated %}
-      <img class="forest" src="https://www.w3schools.com/howto/img_forest.jpg">
+      <img class="nav-profile-pic" src="https://www.w3schools.com/howto/img_forest.jpg">
       {% else %}
       <li><a href="{% url 'user_login' %}">Login</a></li>
       {% endif %}
@@ -26,7 +26,7 @@
   <main class="container">
     <div class="nav-dropdown">
       <div class="dropdown-menu">
-        <a class="people" href="#">Profile</a>
+        <a class="people" href="/profile/{{user.username}}">Profile</a>
         <a class="people" href="#">Create Course</a>
         <a class="people" href="{% url 'user_login' %}">Logout</a>
       </div>
@@ -38,5 +38,5 @@
 </body>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="static/js/main.js"></script>
+	<script src="/static/js/main.js"></script>
 </html>
