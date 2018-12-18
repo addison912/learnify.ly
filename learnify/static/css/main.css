@@ -187,10 +187,10 @@ footer {
 }
 
 /*///////// About Us Page Start ///////////*/
-.about-img {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+
+.about-header {
+  text-align: center;
+  margin-top: -2.5%;
 }
 
 #addison-pic, #harry-pic, #kenny-pic {
@@ -200,32 +200,13 @@ footer {
   border-radius: 50%;
 }
 
-.about-header {
-  text-align: center;
-  margin-top: 2.5%;
-}
-
-.about-names, .about-container  {
+.about-container  {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-}
-
-.about-container {
   margin-left: 2.5%;
   margin-right: 2.5%;
   justify-content: space-between;
-}
-
-.about-container {
-  margin-left: 2.5%;
-  margin-right: 2.5%;
   text-align: center;
-}
-
-.article1, .article2, .article3 {
-  margin-left: 2.5%;
-  margin-right: 2.5%;
 }
 
 .about-body {
@@ -233,4 +214,20 @@ footer {
   margin-top: 2.5%;
 }
 
+.article1, .article2, .article3 {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+.about-separator {
+  border: 1px solid #666;
+}
+
 /*////////// About us page end ////////////////////*/
+
+
+/*/////////////////MEDIA QUERIES///////////////////*/
+
+@media screen and (max-width: 842px) {
+
+}
