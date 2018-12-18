@@ -145,14 +145,14 @@ textarea {
 .course-container {
 
   margin: 0;
-  padding: 12px 0;
+  padding: 20px 0;
   background: #666
 }
 
 .course-row {
   display: flex;
   height: 300px;
-  margin: 12px 0;
+  margin: 20px 0;
 }
 
 .course-details {
@@ -250,11 +250,12 @@ footer {
 /*/////////// Media Queries //////////////////////*/
 
 /* Course Page */
-@media screen and (max-width: 956px) {
+@media screen and (max-width: 1025px) {
   .course-row {
     display: flex;
     flex-direction: column;
-    clear: both;
+    margin-top:1%;
+    height: 100%;
   }
 }
 
