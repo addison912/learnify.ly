@@ -158,7 +158,7 @@ button.stripe-button-el>span {
 #addison-pic, #harry-pic, #kenny-pic {
   width:150px;
   height:150px;
-  border: 5px solid blue;
+  border: 5px solid rgb(0, 100, 255);
   border-radius: 50%;
 }
 
