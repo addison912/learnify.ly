@@ -6,12 +6,10 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('about', views.about, name='about'),
-
     path('courses', views.courses, name='courses'),
     path('courses/<int:pk>', views.course_detail, name='course_detail'),
     path('courses/create', views.course_create, name='course_create'),
-
-    path('profile', views.profile, name='profile'),
+    path('profile/<slug:username>', views.profile, name='profile'),
     path('user_login', views.user_login, name='user_login'),
     path('register', views.register, name='register'),
     path('logout', views.user_logout, name='logout'),
@@ -20,5 +18,5 @@ urlpatterns = [
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,
-                          document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(
+        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
