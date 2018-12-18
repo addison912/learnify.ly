@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background: rgb(65, 132, 255);
+  background: white;
 }
 
 main {
@@ -112,6 +112,32 @@ nav ul li:hover:before {
 
 .welcome, .about {
   text-align: center;
+}
+
+.jumbotron {
+  background-color: whitesmoke;
+  width: 500px;
+  border-radius: 25px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  margin-left: 20px;
+}
+
+.jumbotron form {
+  padding-left: 10px;
+}
+
+/* .jumbotron form input {
+  margin-left: 50%;
+  margin-right: 50%;
+} */
+
+.helptext {
+  display: none;
+}
+
+.register {
+  text-align: center;
+  padding-top: 5px;
 }
 
 
