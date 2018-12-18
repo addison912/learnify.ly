@@ -23,13 +23,17 @@ def index(request):
         else:
             print(user_form.errors, profile_form.errors)
     else:
+        # global logged_in_user
         user_form = UserForm()
         profile_form = UserProfileForm()
+        # profile = logged_in_user
+
     return render(
         request, 'learnify/index.html', {
             'user_form': user_form,
             'profile_form': profile_form,
-            'registered': registered
+            'registered': registered,
+            # 'profile': profile
         })
 
 

@@ -90,7 +90,7 @@ nav ul li:before {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #666;
+  background-color: rgb(130, 197, 202);
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -200,7 +200,7 @@ textarea {
 
   margin: 0;
   padding: 20px 0;
-  background: #C5DFF9;
+  background: rgb(130, 197, 202);
 }
 
 .course-row {
@@ -227,8 +227,8 @@ textarea {
 
 button.stripe-button-el,
 button.stripe-button-el>span {
-  background-color: whitesmoke;
-  color: #666;
+  background-color: #003346;
+  color: white;
   background-image: none;
 }
 
@@ -274,7 +274,6 @@ footer {
 .about-pic {
   width:150px;
   height:150px;
-  border: 5px solid rgb(65, 132, 255);
   border-radius: 50%;
 }
 
