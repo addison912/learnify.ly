@@ -2,23 +2,27 @@
 {% load staticfiles %}
 
     {% block content %}
+    <video loop autoplay muted class="myvideo">
+        <source src="static/media/videos/hero.webm" type="video/webm">
+    </video>
+
     <h2 class="welcome">Welcome to Learnify!</h2>
     <p class="about">Advance your skills with in-depth classes. Browse categories and videos to gain skills in what you love.</p>
-    <div class="container">
-        <div class="jumbotron">
-            {% if user.is_authenticated %}
-            <h1>Thanks for registering!</h1>
-            {% else %}
-            <h3 class="register">Register to get started</h3>
-            <form enctype="multipart/form-data"           method="POST">
-                {% csrf_token %}
-                {{ user_form.as_p }}
-                {{ profile_form.as_p }}
-                <input type="submit" name="" value="Register">
-            </form>
-            {% endif %}
+    <div class="registrationcontainer">
+        <div class="container">
+            <div class="jumbotron">
+                {% if user.is_authenticated %}
+                <h1 class="thanks">Thanks for registering!</h1>
+                {% else %}
+                <h3 class="register">Register to get started</h3>
+                <form enctype="multipart/form-data"           method="POST">
+                    {% csrf_token %}
+                    {{ user_form.as_p }}
+                    {{ profile_form.as_p }}
+                    <input type="submit" name="" value="Register">
+                </form>
+                {% endif %}
+            </div>
         </div>
     </div>
     {% endblock %}
-
-
