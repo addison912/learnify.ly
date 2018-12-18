@@ -20,11 +20,11 @@ ul {
 
 a {
   text-decoration: none;
-  color: #333;
+  color: #00BBCA;
 }
 
 nav {
-  background: whitesmoke;
+  background: #003346;
   margin: 0;
   position: fixed;
   top: 0;
