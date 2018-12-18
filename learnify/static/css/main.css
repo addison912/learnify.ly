@@ -39,6 +39,20 @@ nav ul {
   justify-content: space-evenly;
   align-items: center;
 }
+
+.forest {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.woods {
+  border-radius: 0%;
+}
+
+/*//////////// dropdown profile menu ////////////*/
+
+
 /*//////////// course create form start ////////////*/
 
 .course-create {
@@ -101,6 +115,15 @@ textarea {
   color: whitesmoke;
 }
 
+/* ////////// stripe button start//////////// */
+
+button.stripe-button-el,
+button.stripe-button-el>span {
+  background-color: #666666;
+  background-image: none;
+}
+/* ////////////stripe button end///////////// */
+
 /*//////////// course page end ////////////*/
 /*//////////// footer start ////////////*/
 
@@ -108,3 +131,4 @@ textarea {
   text-align: center;
   background: black;
 } */
+
