@@ -53,6 +53,29 @@ nav ul {
 /*//////////// dropdown profile menu ////////////*/
 
 
+.people {
+  padding: 6px 9px;
+  border: solid 2px whitesmoke;
+}
+
+.people:hover {
+  background-color: white;
+}
+
+.john {
+  position: absolute;
+  display: inline-block;
+  background-color: whitesmoke;
+  z-index: 100;
+  margin-left: 80vw;
+  border-radius: 4px;
+}
+
+.bercow {
+  display: flex;
+  flex-direction: column;
+}
+
 /*//////////// course create form start ////////////*/
 
 .course-create {
