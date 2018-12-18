@@ -6,6 +6,7 @@ from learnify.forms import *
 from learnify.models import *
 from django.conf import settings
 
+logged_in_user = None
 
 def index(request):
     return render(request, 'learnify/index.html')
@@ -29,7 +30,12 @@ def course_create(request):
     if request.method == 'POST':
         form = CourseForm(request.POST)
         if form.is_valid():
-            course = form.save()
+            global logged_in_user
+            print(logged_in_user.pk)
+            course = form.save(commit=False)
+            owner = logged_in_user.pk
+            course.owner_id = owner
+            course.save()
             return redirect('course_detail', pk=course.pk)
     else:
         form = CourseForm()
@@ -39,6 +45,9 @@ def course_create(request):
 def profile(request, username):
     user = User.objects.get(username=username)
     profile = UserProfile.objects.get(user=user)
+    global logged_in_user
+    logged_in_user = profile
+    print(logged_in_user.first_name)
     return render(request, 'learnify/profile.html', {'profile': profile})
 
 
