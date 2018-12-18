@@ -216,13 +216,6 @@ footer {
   margin-top: 2.5%;
 }
 
-#addison-pic, #harry-pic, #kenny-pic {
-  width:150px;
-  height:150px;
-  border: 5px solid rgb(65, 132, 255);
-  border-radius: 50%;
-}
-
 .about-container  {
   display: flex;
   flex-direction: row;
@@ -230,6 +223,13 @@ footer {
   margin-left: 2.5%;
   margin-right: 2.5%;
   text-align: center;
+}
+
+#addison-pic, #harry-pic, #kenny-pic {
+  width:150px;
+  height:150px;
+  border: 5px solid rgb(65, 132, 255);
+  border-radius: 50%;
 }
 
 .article1, .article2, .article3 {
@@ -246,3 +246,17 @@ footer {
 }
 
 /*////////// About us page end ////////////////////*/
+
+/*/////////// Media Queries //////////////////////*/
+
+@media screen and (max-width:850px) {
+  
+  .about-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article1, .article2, .article3 {
+    margin-top: 5%;
+  }
+}
