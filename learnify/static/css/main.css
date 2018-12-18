@@ -249,6 +249,16 @@ footer {
 
 /*/////////// Media Queries //////////////////////*/
 
+/* Course Page */
+@media screen and (max-width: 956px) {
+  .course-row {
+    display: flex;
+    flex-direction: column;
+    clear: both;
+  }
+}
+
+/* About Us Page */
 @media screen and (max-width:850px) {
   
   .about-container {
