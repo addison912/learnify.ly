@@ -107,6 +107,16 @@ nav ul li:hover:before {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
+
+/*//////////// Landing Page index.html ////////////*/
+
+.test {
+  color: yellow;
+  font-weight: 700;
+}
+
+
+
 /*//////////// course create form start ////////////*/
 
 .course-create {
