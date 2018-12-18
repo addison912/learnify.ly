@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background: rgb(65, 132, 255);
+  background: #C5DFF9;
 }
 
 main {
@@ -94,7 +94,7 @@ nav ul li:before {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #000;
+  background-color: #666;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -146,7 +146,7 @@ textarea {
 
   margin: 0;
   padding: 20px 0;
-  background: #666
+  background: #C5DFF9;
 }
 
 .course-row {
@@ -157,7 +157,7 @@ textarea {
 
 .course-details {
   padding: 20px;
-  background: #333;
+  background: rgba(0,0,0,0.3);
 }
 
 .course-details h3 {
@@ -173,7 +173,8 @@ textarea {
 
 button.stripe-button-el,
 button.stripe-button-el>span {
-  background-color: #666;
+  background-color: whitesmoke;
+  color: #666;
   background-image: none;
 }
 
@@ -214,6 +215,7 @@ footer {
 .about-header {
   text-align: center;
   margin-top: 2.5%;
+  color: #454;
 }
 
 .about-container  {
@@ -223,12 +225,12 @@ footer {
   margin-left: 2.5%;
   margin-right: 2.5%;
   text-align: center;
+  color: #454;
 }
 
 #addison-pic, #harry-pic, #kenny-pic {
   width:150px;
   height:150px;
-  border: 5px solid rgb(65, 132, 255);
   border-radius: 50%;
 }
 
@@ -238,7 +240,7 @@ footer {
 }
 
 .about-separator {
-  border: 1.25px solid #666;
+  border: 1.25px solid whitesmoke;
 }
 .about-body {
   margin-bottom: 5%;
