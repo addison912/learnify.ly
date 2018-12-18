@@ -17,14 +17,26 @@
         <li><a href="{% url 'courses' %}">Courses</a></li>
         
         <li><a href="{% url 'about' %}">About</a></li>
-        <li><a href="{% url 'profile' %}">Profile</a></li>
         <!-- {% if user.is_authenticated %} -->
         <!-- {% else %} -->
-        <img class="forest" src="https://www.w3schools.com/howto/img_forest.jpg" alt="">
+        <div class="tom">
+          <div class="george">
+            <img class="forest" src="https://www.w3schools.com/howto/img_forest.jpg" alt="">
+          </div>
+          <div>
+              <ol class="bercow">
+                  <li class="listy course">Create Course</li>
+                  <li class="listy profile">Profile</li>
+                  <li class="listy logout">Logout</li>
+                </ol>
+          </div>
+        </div>
         <!-- <li><a href="{% url 'user_login' %}">Login</a></li> -->
         <!-- {% endif %} -->
 
       </ul>
+
+
     </nav>
     <main class="container">{% block content %} {% endblock %}</main>
     <footer><span>&copy; Learnify 2018</span></footer>
