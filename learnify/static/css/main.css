@@ -20,7 +20,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: rgb(130, 197, 202);
+  color: #7FE8EF;
 }
 
 nav {
@@ -46,6 +46,15 @@ nav ul {
   width: 35px;
   border-radius: 50%;
 }
+
+/*//////////// login page ////////////*/
+
+
+.login {
+  color: #7FE8EF;
+  margin-left: 10px;
+}
+
 
 /*//////////// dropdown profile menu ////////////*/
 
@@ -90,7 +99,7 @@ nav ul li:before {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: rgb(130, 197, 202);
+  background-color: #7FE8EF;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -156,11 +165,13 @@ nav ul li:hover:before {
 .register {
   text-align: center;
   padding-top: 5px;
-  color: #00BBCA
+  color: #7FE8EF
 }
 
 .thanks {
-  color: #00BBCA;
+  color: #7FE8EF;
+  text-align: center;
+  padding: 10px;
 }
 
 body>main>div>div>form>input {
