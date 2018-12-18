@@ -1,8 +1,8 @@
 console.log('I am working');
 
 $(document).ready(function() {
-    $( '.bercow').hide();
+    $('.john').hide();
     $('.forest').on('click', function() {
-        $( '.bercow').slideToggle('slow');
+        $('.john').slideToggle('slow');
     })
 });
