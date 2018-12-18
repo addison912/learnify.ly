@@ -210,10 +210,10 @@ footer {
 }
 
 /*///////// About Us Page Start ///////////*/
-.about-img {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+
+.about-header {
+  text-align: center;
+  margin-top: 2.5%;
 }
 
 #addison-pic, #harry-pic, #kenny-pic {
@@ -221,11 +221,6 @@ footer {
   height:150px;
   border: 5px solid rgb(65, 132, 255);
   border-radius: 50%;
-}
-
-.about-header {
-  text-align: center;
-  margin-top: 2.5%;
 }
 
 .about-container  {
