@@ -41,6 +41,7 @@ nav ul {
   align-items: center;
 }
 
+<<<<<<< HEAD
 .forest {
   height: 35px;
   width: 35px;
@@ -54,6 +55,38 @@ nav ul {
 /*//////////// dropdown profile menu ////////////*/
 
 
+=======
+li {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+}
+
+li:hover {
+  color: #000;
+}
+
+li:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+li:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+>>>>>>> kenny
 /*//////////// course create form start ////////////*/
 
 .course-create {
@@ -120,9 +153,10 @@ textarea {
 
 button.stripe-button-el,
 button.stripe-button-el>span {
-  background-color: #666666;
+  background-color: #666;
   background-image: none;
 }
+
 /* ////////////stripe button end///////////// */
 
 /*//////////// course page end ////////////*/
@@ -151,6 +185,59 @@ footer {
   margin-top: 20px;
   text-align: center;
   background: black;
+<<<<<<< HEAD
   color: whitesmoke;
   padding:10px;
 }
+=======
+} */
+
+/*///////// About Us Page Start ///////////*/
+.about-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#addison-pic, #harry-pic, #kenny-pic {
+  width:150px;
+  height:150px;
+  border: 5px solid rgb(0, 100, 255);
+  border-radius: 50%;
+}
+
+.about-header {
+  text-align: center;
+  margin-top: 2.5%;
+}
+
+.about-names, .about-container  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.about-container {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  justify-content: space-between;
+}
+
+.about-container {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  text-align: center;
+}
+
+.article1, .article2, .article3 {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+.about-body {
+  margin-bottom: 5%;
+  margin-top: 2.5%;
+}
+
+/*////////// About us page end ////////////////////*/
+>>>>>>> kenny
