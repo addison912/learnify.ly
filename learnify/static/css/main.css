@@ -143,14 +143,11 @@ nav ul li:hover:before {
 
 
 body>main>div>div>form>input {
-  margin-left: 40%;
-  margin-right: 40%;
   margin-bottom: 15px;
-  width: 100%;
-
+  background-color: antiquewhite;
 }
 
-body>main>div>div>form>p>input {
+.jumbotron input {
   width: 97%;
   /* margin-right: 10px; */
 }
