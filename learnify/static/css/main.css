@@ -230,15 +230,8 @@ footer {
   color: #454;
 }
 
-#addison-pic, #harry-pic, #kenny-pic {
-  width:150px;
-  height:150px;
-  border-radius: 50%;
-}
-
 .about-article {
-  margin-left: 2.5%;
-  margin-right: 2.5%;
+  margin: 0 2.5%;
 }
 
 .about-separator {
@@ -271,7 +264,7 @@ footer {
     flex-direction: column;
   }
 
-  .article1, .article2, .article3 {
+  .about-article {
     margin-top: 5%;
   }
 }
