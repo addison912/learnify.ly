@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background: white;
+  background: #7FE8EF;
 }
 
 main {
@@ -20,7 +20,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: #00BBCA;
+  color: rgb(130, 197, 202);
 }
 
 nav {
@@ -112,14 +112,21 @@ nav ul li:hover:before {
 
 .welcome, .about {
   text-align: center;
+  color: #003346;
 }
 
 .jumbotron {
-  background-color: whitesmoke;
+  background-color: #003346;
   width: 500px;
   border-radius: 25px;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
   margin-left: 20px;
+}
+
+.jumbotron label {
+  color: #7FE8EF;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
 }
 
 .jumbotron form {
@@ -138,19 +145,24 @@ nav ul li:hover:before {
 .register {
   text-align: center;
   padding-top: 5px;
+  color: #00BBCA
 }
 
 
 
 body>main>div>div>form>input {
   margin-bottom: 15px;
-  background-color: antiquewhite;
+  background-color: #7FE8EF;
 }
 
 .jumbotron input {
   width: 97%;
-  /* margin-right: 10px; */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: #003346;
 }
+
+
 
 
 /*//////////// course create form start ////////////*/
