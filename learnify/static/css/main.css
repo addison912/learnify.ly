@@ -63,7 +63,7 @@ nav ul {
   background-color: white;
 }
 
-.john {
+.nav-dropdown {
   position: absolute;
   display: inline-block;
   background-color: whitesmoke;
@@ -72,7 +72,7 @@ nav ul {
   border-radius: 4px;
 }
 
-.bercow {
+.dropdown-menu {
   display: flex;
   flex-direction: column;
 }
