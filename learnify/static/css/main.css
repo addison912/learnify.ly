@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background: rgb(65, 132, 255);
+  background: #C5DFF9;
 }
 
 main {
@@ -41,14 +41,10 @@ nav ul {
   align-items: center;
 }
 
-.forest {
+.nav-profile-pic {
   height: 35px;
   width: 35px;
   border-radius: 50%;
-}
-
-.woods {
-  border-radius: 0%;
 }
 
 /*//////////// dropdown profile menu ////////////*/
@@ -94,7 +90,7 @@ nav ul li:before {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #000;
+  background-color: #666;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -155,19 +151,19 @@ textarea {
 .course-container {
 
   margin: 0;
-  padding: 12px 0;
-  background: #666
+  padding: 20px 0;
+  background: #C5DFF9;
 }
 
 .course-row {
   display: flex;
   height: 300px;
-  margin: 12px 0;
+  margin: 20px 0;
 }
 
 .course-details {
   padding: 20px;
-  background: #333;
+  background: rgba(0,0,0,0.3);
 }
 
 .course-details h3 {
@@ -183,7 +179,8 @@ textarea {
 
 button.stripe-button-el,
 button.stripe-button-el>span {
-  background-color: #666;
+  background-color: whitesmoke;
+  color: #666;
   background-image: none;
 }
 
@@ -226,7 +223,7 @@ footer {
   margin-top: 2.5%;
 }
 
-#addison-pic, #harry-pic, #kenny-pic {
+.about-pic {
   width:150px;
   height:150px;
   border: 5px solid rgb(65, 132, 255);
@@ -240,15 +237,15 @@ footer {
   margin-left: 2.5%;
   margin-right: 2.5%;
   text-align: center;
+  color: #454;
 }
 
-.article1, .article2, .article3 {
-  margin-left: 2.5%;
-  margin-right: 2.5%;
+.about-article {
+  margin: 0 2.5%;
 }
 
 .about-separator {
-  border: 1.25px solid #666;
+  border: 1.25px solid whitesmoke;
 }
 .about-body {
   margin-bottom: 5%;
@@ -256,3 +253,28 @@ footer {
 }
 
 /*////////// About us page end ////////////////////*/
+
+/*/////////// Media Queries //////////////////////*/
+
+/* Course Page */
+@media screen and (max-width: 1025px) {
+  .course-row {
+    display: flex;
+    flex-direction: column;
+    margin-top:1%;
+    height: 100%;
+  }
+}
+
+/* About Us Page */
+@media screen and (max-width:850px) {
+  
+  .about-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-article {
+    margin-top: 5%;
+  }
+}
