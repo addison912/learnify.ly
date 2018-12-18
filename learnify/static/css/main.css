@@ -213,7 +213,7 @@ footer {
 
 .about-header {
   text-align: center;
-  margin-top: -2.5%;
+  margin-top: 2.5%;
 }
 
 #addison-pic, #harry-pic, #kenny-pic {
@@ -226,15 +226,10 @@ footer {
 .about-container  {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   margin-left: 2.5%;
   margin-right: 2.5%;
-  justify-content: space-between;
   text-align: center;
-}
-
-.about-body {
-  margin-bottom: 5%;
-  margin-top: 2.5%;
 }
 
 .article1, .article2, .article3 {
@@ -243,14 +238,11 @@ footer {
 }
 
 .about-separator {
-  border: 1px solid #666;
+  border: 1.25px solid #666;
+}
+.about-body {
+  margin-bottom: 5%;
+  margin-top: 2.5%;
 }
 
 /*////////// About us page end ////////////////////*/
-
-
-/*/////////////////MEDIA QUERIES///////////////////*/
-
-@media screen and (max-width: 842px) {
-
-}
