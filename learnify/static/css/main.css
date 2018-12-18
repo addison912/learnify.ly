@@ -52,17 +52,6 @@ nav ul {
 
 /*//////////// dropdown profile menu ////////////*/
 
-.bercow {
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  list-style-type: none;
-  margin-right: 5px;
-}
-
-.listy {
-  background-color: white;
-}
 
 /*//////////// course create form start ////////////*/
 

@@ -10,37 +10,28 @@
     <title>Learnify</title>
   </head>
 
-  <body>
-    <nav>
-      <ul>
-        <li><a href="{% url 'index' %}">Home</a></li>
-        <li><a href="{% url 'courses' %}">Courses</a></li>
-        
-        <li><a href="{% url 'about' %}">About</a></li>
-        <!-- {% if user.is_authenticated %} -->
-        <!-- {% else %} -->
-        <div class="tom">
-          <div class="george">
-            <img class="forest" src="https://www.w3schools.com/howto/img_forest.jpg" alt="">
-          </div>
-          <div>
-              <ol class="bercow">
-                  <li class="listy course">Create Course</li>
-                  <li class="listy profile">Profile</li>
-                  <li class="listy logout">Logout</li>
-                </ol>
-          </div>
-        </div>
-        <!-- <li><a href="{% url 'user_login' %}">Login</a></li> -->
-        <!-- {% endif %} -->
+<body>
+  <nav>
+    <ul>
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'courses' %}">Courses</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+      <!-- {% if user.is_authenticated %} -->
+      <!-- {% else %} -->
+      <img class="forest" src="https://www.w3schools.com/howto/img_forest.jpg">
+    </ul>
+  </nav>
+  <ul>
+    <li>Create Course</li>
+    <li>Profile</li>
+    <li>Logout</li>
+  </ul>
+      <!-- <li><a href="{% url 'user_login' %}">Login</a></li> -->
+      <!-- {% endif %} -->
 
-      </ul>
-
-
-    </nav>
-    <main class="container">{% block content %} {% endblock %}</main>
-    <footer><span>&copy; Learnify 2018</span></footer>
-  </body>
+<main class="container">{% block content %} {% endblock %}</main>
+  <footer><span>&copy; Learnify 2018</span></footer>
+</body>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="static/js/main.js"></script>
