@@ -147,7 +147,7 @@ nav ul li:hover:before {
 
 
 
-body>main>div>div>form>input {
+input[type="submit"] {
   margin-bottom: 15px;
   background-color: #7FE8EF;
 }

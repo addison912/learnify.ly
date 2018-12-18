@@ -19,7 +19,7 @@
       <li><a href="{% url 'courses' %}">Courses</a></li>
       <li><a href="{% url 'about' %}">About</a></li>
       {% if user.is_authenticated %}
-      <img class="nav-profile-pic" src="https://www.w3schools.com/howto/img_forest.jpg">
+      <img class="nav-profile-pic" src="/media/{{logged_in_user.profile_pic}}">
       {% else %}
       <li><a href="{% url 'user_login' %}">Login</a></li>
       {% endif %}

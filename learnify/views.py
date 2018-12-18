@@ -8,16 +8,19 @@ from django.conf import settings
 
 logged_in_user = None
 
+
 def index(request):
     registered = False
-    if request.method == 'POST':
+    global logged_in_user
+    print(logged_in_user.first_name)
+    if request.method == "POST":
         user_form = UserForm(data=request.POST)
         profile_form = UserProfileForm(data=request.POST)
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save()
             profile.user = user
-            if 'profile_pic' in request.FILES:
-                profile.profile_pic = request.FILES['profile_pic']
+            if "profile_pic" in request.FILES:
+                profile.profile_pic = request.FILES["profile_pic"]
             profile.save()
             registered = True
         else:
@@ -26,41 +29,57 @@ def index(request):
         user_form = UserForm()
         profile_form = UserProfileForm()
     return render(
-        request, 'learnify/index.html', {
-            'user_form': user_form,
-            'profile_form': profile_form,
-            'registered': registered
-        })
+        request,
+        "learnify/index.html",
+        {
+            "user_form": user_form,
+            "profile_form": profile_form,
+            "registered": registered,
+            "logged_in_user": logged_in_user,
+        },
+    )
 
 
 def courses(request):
     courses = Course.objects.all()
     stripe_key = settings.APIKEY
-    return render(request, 'learnify/courses.html', {
-        'courses': courses,
-        'stripe_key': stripe_key
-    })
+    return render(
+        request,
+        "learnify/courses.html",
+        {
+            "courses": courses,
+            "stripe_key": stripe_key,
+            "logged_in_user": logged_in_user,
+        },
+    )
 
 
 def course_detail(request):
     course = Course.objects.get(id=pk)
-    return render(request, 'learnify/course_detail.html', {'course': course})
+    return render(
+        request,
+        "learnify/course_detail.html",
+        {"course": course, "logged_in_user": logged_in_user},
+    )
 
 
 def course_create(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         form = CourseForm(request.POST)
         if form.is_valid():
             global logged_in_user
-            print(logged_in_user.pk)
             course = form.save(commit=False)
             owner = logged_in_user.pk
             course.owner_id = owner
             course.save()
-            return redirect('course_detail', pk=course.pk)
+            return redirect("course_detail", pk=course.pk)
     else:
         form = CourseForm()
-    return render(request, 'learnify/create_course_form.html', {'form': form})
+    return render(
+        request,
+        "learnify/create_course_form.html",
+        {"form": form, "logged_in_user": logged_in_user},
+    )
 
 
 def profile(request, username):
@@ -68,28 +87,31 @@ def profile(request, username):
     profile = UserProfile.objects.get(user=user)
     global logged_in_user
     logged_in_user = profile
-    print(logged_in_user.first_name)
-    return render(request, 'learnify/profile.html', {'profile': profile})
+    return render(
+        request,
+        "learnify/profile.html",
+        {"profile": profile, "logged_in_user": logged_in_user},
+    )
 
 
 def about(request):
-    return render(request, 'learnify/about.html')
+    return render(request, "learnify/about.html", {"logged_in_user": logged_in_user})
 
 
 @login_required
 def special(request):
-    return HttpResponse('You are logged in')
+    return HttpResponse("You are logged in")
 
 
 @login_required
 def user_logout(request):
     logout(request)
-    return redirect('index')
+    return redirect("index")
 
 
 def register(request):
     registered = False
-    if request.method == 'POST':
+    if request.method == "POST":
         user_form = UserForm(data=request.POST)
         profile_form = UserProfileForm(data=request.POST)
         if user_form.is_valid() and profile_form.is_valid():
@@ -97,8 +119,8 @@ def register(request):
             user.set_password(user.password)
             user.save()
             profile.user = user
-            if 'profile_pic' in request.FILES:
-                profile.profile_pic = request.FILES['profile_pic']
+            if "profile_pic" in request.FILES:
+                profile.profile_pic = request.FILES["profile_pic"]
             profile.save()
             registered = True
         else:
@@ -107,27 +129,30 @@ def register(request):
         user_form = UserForm()
         profile_form = UserProfileForm()
     return render(
-        request, 'learnify/registration.html', {
-            'user_form': user_form,
-            'profile_form': profile_form,
-            'registered': registered
-        })
+        request,
+        "learnify/registration.html",
+        {
+            "user_form": user_form,
+            "profile_form": profile_form,
+            "registered": registered,
+        },
+    )
 
 
 def user_login(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
         user = authenticate(username=username, password=password)
         if user:
             if user.is_active:
                 login(request, user)
-                return redirect(f'profile/{username}')
+                return redirect(f"profile/{username}")
             else:
-                return HttpResponse('Your account was inactive.')
+                return HttpResponse("Your account was inactive.")
         else:
-            print('Someone tried to login and failed.')
-            print(f'They used username: {username} and password {password}')
-            return HttpResponse('Invalid login details given')
+            print("Someone tried to login and failed.")
+            print(f"They used username: {username} and password {password}")
+            return HttpResponse("Invalid login details given")
     else:
-        return render(request, 'learnify/login.html', {})
+        return render(request, "learnify/login.html", {})
