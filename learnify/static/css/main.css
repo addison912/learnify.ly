@@ -228,19 +228,10 @@ footer {
   margin-top: 2.5%;
 }
 
-.about-names, .about-container  {
+.about-container  {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-}
-
-.about-container {
-  margin-left: 2.5%;
-  margin-right: 2.5%;
-  justify-content: space-between;
-}
-
-.about-container {
   margin-left: 2.5%;
   margin-right: 2.5%;
   text-align: center;
@@ -251,6 +242,9 @@ footer {
   margin-right: 2.5%;
 }
 
+.about-separator {
+  border: 1.25px solid #666;
+}
 .about-body {
   margin-bottom: 5%;
   margin-top: 2.5%;
