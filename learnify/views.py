@@ -14,7 +14,10 @@ def index(request):
 def courses(request):
     courses = Course.objects.all()
     stripe_key = settings.APIKEY
-    return render(request, 'learnify/courses.html', {'courses': courses, 'stripe_key': stripe_key})
+    return render(request, 'learnify/courses.html', {
+        'courses': courses,
+        'stripe_key': stripe_key
+    })
 
 
 def course_detail(request):
@@ -33,21 +36,26 @@ def course_create(request):
     return render(request, 'learnify/create_course_form.html', {'form': form})
 
 
-def profile(request):
-    return render(request, 'learnify/profile.html')
+def profile(request, username):
+    user = User.objects.get(username=username)
+    profile = UserProfile.objects.get(user=user)
+    return render(request, 'learnify/profile.html', {'profile': profile})
 
 
 def about(request):
     return render(request, 'learnify/about.html')
 
+
 @login_required
 def special(request):
     return HttpResponse('You are logged in')
+
 
 @login_required
 def user_logout(request):
     logout(request)
     return redirect('index')
+
 
 def register(request):
     registered = False
@@ -64,11 +72,17 @@ def register(request):
             profile.save()
             registered = True
         else:
-            print(user_form.errors,profile_form.errors)
+            print(user_form.errors, profile_form.errors)
     else:
         user_form = UserForm()
         profile_form = UserProfileForm()
-    return render(request, 'learnify/registration.html', {'user_form':user_form,'profile_form':profile_form,'registered':registered})
+    return render(
+        request, 'learnify/registration.html', {
+            'user_form': user_form,
+            'profile_form': profile_form,
+            'registered': registered
+        })
+
 
 def user_login(request):
     if request.method == 'POST':
@@ -77,8 +91,8 @@ def user_login(request):
         user = authenticate(username=username, password=password)
         if user:
             if user.is_active:
-                login(request,user)
-                return redirect('index')
+                login(request, user)
+                return redirect('profile')
             else:
                 return HttpResponse('Your account was inactive.')
         else:

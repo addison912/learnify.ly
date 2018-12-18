@@ -5,10 +5,11 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+  background: rgb(65, 132, 255);
 }
 
 main {
-  padding-top: 64px;
+  padding: 64px 0 0 0;
 }
 
 ul {
@@ -125,10 +126,31 @@ button.stripe-button-el>span {
 /* ////////////stripe button end///////////// */
 
 /*//////////// course page end ////////////*/
+/*//////////// profile start ////////////*/
+
+.profile-pic {
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+}
+
+.profile-name {
+  text-transform: capitalize;
+}
+
+.profile-info {
+  padding: 12px;
+}
+
+/*//////////// profile end ////////////*/
 /*//////////// footer start ////////////*/
 
-/* footer {
+footer {
+  position: fixed;
+  bottom: 100vh;
+  margin-top: 20px;
   text-align: center;
   background: black;
-} */
-
+  color: whitesmoke;
+  padding:10px;
+}
