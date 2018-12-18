@@ -99,6 +99,15 @@ nav ul {
   color: whitesmoke;
 }
 
+/* ////////// stripe button start//////////// */
+
+button.stripe-button-el,
+button.stripe-button-el>span {
+  background-color: #666666;
+  background-image: none;
+}
+/* ////////////stripe button end///////////// */
+
 /*//////////// course page end ////////////*/
 /*//////////// footer start ////////////*/
 
