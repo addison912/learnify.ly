@@ -41,7 +41,6 @@ nav ul {
   align-items: center;
 }
 
-<<<<<<< HEAD
 .forest {
   height: 35px;
   width: 35px;
@@ -55,18 +54,17 @@ nav ul {
 /*//////////// dropdown profile menu ////////////*/
 
 
-=======
-li {
+nav ul li {
   position: relative;
   color: #000;
   text-decoration: none;
 }
 
-li:hover {
+nav ul li:hover {
   color: #000;
 }
 
-li:before {
+nav ul li:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -81,12 +79,11 @@ li:before {
   transition: all 0.5s ease-in-out 0s;
 }
 
-li:hover:before {
+nav ul li:hover:before {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
->>>>>>> kenny
 /*//////////// course create form start ////////////*/
 
 .course-create {
@@ -185,12 +182,9 @@ footer {
   margin-top: 20px;
   text-align: center;
   background: black;
-<<<<<<< HEAD
   color: whitesmoke;
   padding:10px;
 }
-=======
-} */
 
 /*///////// About Us Page Start ///////////*/
 .about-img {
@@ -202,7 +196,7 @@ footer {
 #addison-pic, #harry-pic, #kenny-pic {
   width:150px;
   height:150px;
-  border: 5px solid rgb(0, 100, 255);
+  border: 5px solid rgb(65, 132, 255);
   border-radius: 50%;
 }
 
@@ -240,4 +234,3 @@ footer {
 }
 
 /*////////// About us page end ////////////////////*/
->>>>>>> kenny
