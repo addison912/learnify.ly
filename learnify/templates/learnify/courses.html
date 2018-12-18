@@ -1,26 +1,24 @@
 {% extends 'learnify/base.html' %}
 
 {% block content %}
-    <ul class="course-container">
+<ul class="course-container">
     {% for course in courses %}
-        <li class="course-row">
-            <video height="300" controls>
-                <source src="media/{{course.preview_video}}" type="video/webm">
-                Your browser does not support HTML5 video.
-            </video>
-            <div class="course-details">
-                <a href="{% url 'course_detail' pk=course.id %}">
-                    <h3 class="course-title">{{ course.title }}</h3><br>
-                    <p>{{course.description}}</p>
-                </a>
-            </div>
-        </li>
+    <li class="course-row">
+        <video height="300" controls>
+            <source src="media/{{course.preview_video}}" type="video/webm">
+            Your browser does not support HTML5 video.
+        </video>
+        <div class="course-details">
+            <a href="{% url 'course_detail' pk=course.id %}">
+                <h3 class="course-title">{{ course.title }}</h3><br>
+                <p>{{course.description}}</p>
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{stripe_key}}"
+                    data-description="Purchase Course" data-amount="999" data-locale="auto">
+                </script>
+            </a>
+        </div>
+    </li>
     {% endfor %}
-    </ul>
-<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="{{stripe_key}}"
-    data-description="Purchase Course"
-    data-amount="999"
-    data-locale="auto">
-</script>
+</ul>
+
 {% endblock %}
