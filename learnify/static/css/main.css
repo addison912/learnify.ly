@@ -41,14 +41,10 @@ nav ul {
   align-items: center;
 }
 
-.forest {
+.nav-profile-pic {
   height: 35px;
   width: 35px;
   border-radius: 50%;
-}
-
-.woods {
-  border-radius: 0%;
 }
 
 /*//////////// dropdown profile menu ////////////*/
