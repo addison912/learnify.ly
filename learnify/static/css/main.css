@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background: #C5DFF9;
+  background: #7FE8EF;
 }
 
 main {
@@ -20,11 +20,11 @@ ul {
 
 a {
   text-decoration: none;
-  color: #333;
+  color: rgb(130, 197, 202);
 }
 
 nav {
-  background: whitesmoke;
+  background: #003346;
   margin: 0;
   position: fixed;
   top: 0;
@@ -66,7 +66,7 @@ nav ul {
   background-color: whitesmoke;
   z-index: 100;
   margin-left: 80vw;
-  border-radius: 4px;
+  border-radius: 0 0 4px 4px;
 }
 
 .dropdown-menu {
@@ -104,6 +104,64 @@ nav ul li:hover:before {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
+
+/*//////////// Landing Page index.html ////////////*/
+
+.welcome, .about {
+  text-align: center;
+  color: #003346;
+}
+
+.jumbotron {
+  background-color: #003346;
+  width: 500px;
+  border-radius: 25px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  margin-left: 20px;
+}
+
+.jumbotron label {
+  color: #7FE8EF;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.jumbotron form {
+  padding-left: 10px;
+}
+
+/* .jumbotron form input {
+  margin-left: 50%;
+  margin-right: 50%;
+} */
+
+.helptext {
+  display: none;
+}
+
+.register {
+  text-align: center;
+  padding-top: 5px;
+  color: #00BBCA
+}
+
+
+
+body>main>div>div>form>input {
+  margin-bottom: 15px;
+  background-color: #7FE8EF;
+}
+
+.jumbotron input {
+  width: 97%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: #003346;
+}
+
+
+
+
 /*//////////// course create form start ////////////*/
 
 .course-create {

@@ -30,13 +30,16 @@
       <div class="dropdown-menu">
         <a class="people" href="/profile/{{user.username}}">Profile</a>
         <a class="people" href="{% url 'course_create' %}">Create Course</a>
-        <a class="people" href="{% url 'user_login' %}">Logout</a>
+        <a class="people" href="{% url 'logout' %}">Logout</a>
       </div>
     </div>
     
     {% block content %} {% endblock %}
   </main>
-  <footer><span>&copy; Learnify 2018</span></footer>
+  <footer>
+    <span>&copy; Learnify 2018</span>
+    COPYRIGHT LEARNIFY 2018
+  </footer>
 </body>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>

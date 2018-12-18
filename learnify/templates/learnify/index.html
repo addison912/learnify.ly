@@ -1,5 +1,24 @@
 {% extends 'learnify/base.html' %}
+{% load staticfiles %}
 
-{% block content %}
-    <h2>Welcome to Learnify!</h2>
-{% endblock %}
+    {% block content %}
+    <h2 class="welcome">Welcome to Learnify!</h2>
+    <p class="about">Advance your skills with in-depth classes. Browse categories and videos to gain skills in what you love.</p>
+    <div class="container">
+        <div class="jumbotron">
+            {% if user.is_authenticated %}
+            <h1>Thanks for registering!</h1>
+            {% else %}
+            <h3 class="register">Register to get started</h3>
+            <form enctype="multipart/form-data"           method="POST">
+                {% csrf_token %}
+                {{ user_form.as_p }}
+                {{ profile_form.as_p }}
+                <input type="submit" name="" value="Register">
+            </form>
+            {% endif %}
+        </div>
+    </div>
+    {% endblock %}
+
+
