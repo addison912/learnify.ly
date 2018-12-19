@@ -327,7 +327,8 @@ footer {
 }
 
 .about-separator {
-  border: 1px solid whitesmoke;
+  border: 5px solid whitesmoke;
+  background-color: whitesmoke;
 }
 .about-body {
   margin-bottom: 5%;
