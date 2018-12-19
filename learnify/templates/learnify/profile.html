@@ -6,7 +6,11 @@
         <h2 class="profile-name">Hi {{profile.first_name}}</h2>
         <img class="profile-pic" src="/media/{{profile.profile_pic}}">
     </div>
-    
+
+    {% for purchase in purchases %}
+        <h1>{{purchase.course.title }}</h1>
+        <h2>{{purchase.course.price }}</h2>
+    {% endfor %}
 
     {% else %}
         <h2><span><a href="register">Register</a></span> or <span><a href="login">login</a></span> to view your profile</h2>
