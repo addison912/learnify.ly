@@ -1,5 +1,19 @@
 {% extends 'learnify/base.html' %}
 
 {% block content %}
-    <h2>More about this course</h2>
+    <div class="course-preview-container">
+        <video class="preview-video" width="83.33%" controls>
+            <source src="/media/{{course.preview_video}}" type="video/webm">
+            Your browser does not support HTML5 video.
+        </video>
+        <div class="course-description course-preview-details">
+            <a href="{% url 'course_detail' pk=course.id %}">
+                <h3 class="course-title">{{ course.title }}</h3><br>
+                <p>{{course.description}}</p>
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{stripe_key}}"
+                    data-description="Purchase Course" data-amount="{{course.price}}" data-locale="auto">
+                </script>
+            </a>
+        </div>
+    </div>
 {% endblock %}
