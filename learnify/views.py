@@ -104,7 +104,11 @@ def profile(request, username):
     return render(
         request,
         "learnify/profile.html",
+<<<<<<< HEAD
+        {"profile": profile, "logged_in_user": logged_in_user, "purchases": purchases},
+=======
         {"profile": profile, "logged_in_user": logged_in_user, "purchases":purchases},
+>>>>>>> 7310e1ff0701ccea0a57b5a9de87b502f5b857a5
     )
 
 def about(request):
@@ -171,3 +175,13 @@ def user_login(request):
             return HttpResponse("Invalid login details given")
     else:
         return render(request, "learnify/login.html", {})
+
+@login_required
+def payment(request):
+    user = User.objects.get(id=request.user.id)
+    purchases = Purchase.objects.filter(purchaser=profile, purchases=course)
+    content = {
+        "stripe_key": settings.STRIPE_TEST_PUBLIC_KEY,
+        "purchases": purchases,
+    }
+    return render(request, "learnify/", content)
