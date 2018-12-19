@@ -140,6 +140,10 @@ nav ul li:hover:before {
   font-weight: bold;
 }
 
+#registration {
+  background-color: rgba(0,51,70, 0.85);
+}
+
 .registration-container {
   display: flex;
   flex-direction: column;
