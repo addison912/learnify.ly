@@ -56,7 +56,7 @@ def courses(request):
     )
 
 
-def course_detail(request):
+def course_detail(request, pk):
     course = Course.objects.get(id=pk)
     return render(
         request,

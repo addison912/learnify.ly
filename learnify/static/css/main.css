@@ -60,21 +60,23 @@ nav ul {
 /*//////////// dropdown profile menu ////////////*/
 
 
-.people {
-  padding: 6px 9px;
-  border: solid 2px #003346;
+.dropdown-item {
+  padding: 9px;
+  border-top: .5px solid #a7c4ce;
+  color: #003346;
 }
 
-.people:hover {
+.dropdown-item:hover {
   opacity: 0.7;
 }
 
 .nav-dropdown {
-  position: absolute;
+  position: fixed;
   display: inline-block;
-  background-color: #003346;
+  background-color: #ccf1ff;
   z-index: 100;
-  margin-left: 80vw;
+  top: 64px;
+  margin-left: 77vw;
   border-radius: 0 0 4px 4px;
 }
 
@@ -127,7 +129,6 @@ nav ul li:hover:before {
   border-radius: 25px;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
   margin-left: 20px;
-
 }
 
 .jumbotron label {
@@ -244,20 +245,37 @@ textarea {
   margin: 20px 0;
 }
 
-.course-details {
+.course-description {
   padding: 20px;
   background: rgba(0,0,0,0.3);
+  width: 100%
 }
 
-.course-details h3 {
+.course-description h3 {
   margin: 0;
   color: whitesmoke;
 }
 
-.course-details p {
+.course-description p {
   color: whitesmoke;
 }
 
+/*//////////// course page end ////////////*/
+/*//////////// course detail page start ////////////*/
+
+.course-preview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.course-preview-details {
+  width: 83.33%;
+}
+
+
+
+/*//////////// course detail page end ////////////*/
 /* ////////// stripe button start//////////// */
 
 button.stripe-button-el,
@@ -327,7 +345,7 @@ footer {
 }
 
 .about-separator {
-  border: 1px solid whitesmoke;
+  border: 1.25px solid whitesmoke;
 }
 .about-body {
   margin-bottom: 5%;
