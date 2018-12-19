@@ -3,7 +3,6 @@ from learnify.models import *
 from django.contrib.auth.models import User
 
 
-
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
 
@@ -23,7 +22,8 @@ class CourseForm(forms.ModelForm):
 
     class Meta():
         model = Course
-        fields = ('title', 'category', 'price', 'description', 'preview_video')
+        fields = ('title', 'category', 'price', 'description',
+                  'preview_video')
 
 
 class VideoForm(forms.ModelForm):
@@ -31,4 +31,3 @@ class VideoForm(forms.ModelForm):
     class Meta():
         model = Video
         fields = ('title', 'video', 'description', 'order_number')
-

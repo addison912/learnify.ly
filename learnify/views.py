@@ -77,11 +77,13 @@ def course_detail(request, pk):
 
 def course_create(request):
     if request.method == "POST":
-        form = CourseForm(request.POST)
+        form = CourseForm(request.POST, request.FILES)
         if form.is_valid():
             global logged_in_user
             course = form.save(commit=False)
             course.owner_id = logged_in_user.pk
+            if "preview_video" in request.FILES:
+                course.preview_video = request.FILES["preview_video"]
             course.save()
             return redirect("course_detail", pk=course.pk)
     else:
