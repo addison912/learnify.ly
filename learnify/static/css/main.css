@@ -20,7 +20,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: rgb(130, 197, 202);
+  color: #7FE8EF;
 }
 
 nav {
@@ -48,22 +48,31 @@ nav ul {
   border-radius: 50%;
 }
 
+/*//////////// login page ////////////*/
+
+
+.login {
+  color: #7FE8EF;
+  margin-left: 10px;
+}
+
+
 /*//////////// dropdown profile menu ////////////*/
 
 
 .people {
   padding: 6px 9px;
-  border: solid 2px whitesmoke;
+  border: solid 2px #003346;
 }
 
 .people:hover {
-  background-color: white;
+  opacity: 0.7;
 }
 
 .nav-dropdown {
   position: absolute;
   display: inline-block;
-  background-color: whitesmoke;
+  background-color: #003346;
   z-index: 100;
   margin-left: 80vw;
   border-radius: 0 0 4px 4px;
@@ -91,7 +100,7 @@ nav ul li:before {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: rgb(130, 197, 202);
+  background-color: #7FE8EF;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -109,7 +118,7 @@ nav ul li:hover:before {
 
 .welcome, .about {
   text-align: center;
-  color: #003346;
+  color: #7FE8EF;
 }
 
 .jumbotron {
@@ -118,22 +127,23 @@ nav ul li:hover:before {
   border-radius: 25px;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
   margin-left: 20px;
+
 }
 
 .jumbotron label {
   color: #7FE8EF;
-  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
+}
+
+.registration-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .jumbotron form {
   padding-left: 10px;
 }
-
-/* .jumbotron form input {
-  margin-left: 50%;
-  margin-right: 50%;
-} */
 
 .helptext {
   display: none;
@@ -142,10 +152,14 @@ nav ul li:hover:before {
 .register {
   text-align: center;
   padding-top: 5px;
-  color: #00BBCA
+  color: #7FE8EF
 }
 
-
+.thanks {
+  color: #7FE8EF;
+  text-align: center;
+  padding: 10px;
+}
 
 input[type="submit"] {
   margin-bottom: 15px;
@@ -154,12 +168,32 @@ input[type="submit"] {
 
 .jumbotron input {
   width: 97%;
-  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: #003346;
 }
 
+/*//////////// background video ////////////*/
 
+.myvideo {
+  position: fixed;
+  right: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
 
 
 /*//////////// course create form start ////////////*/
@@ -293,7 +327,7 @@ footer {
 }
 
 .about-separator {
-  border: 1.25px solid whitesmoke;
+  border: 1px solid whitesmoke;
 }
 .about-body {
   margin-bottom: 5%;
