@@ -45,6 +45,7 @@ def index(request):
 def courses(request):
     courses = Course.objects.all()
     stripe_key = settings.APIKEY
+<<<<<<< HEAD
     return render(
         request,
         "learnify/courses.html",
@@ -54,15 +55,26 @@ def courses(request):
             "logged_in_user": logged_in_user,
         },
     )
+=======
+    return render(request, 'learnify/courses.html', {
+        'courses': courses,
+        'stripe_key': stripe_key,
+    })
+>>>>>>> kenny
 
 
 def course_detail(request):
     course = Course.objects.get(id=pk)
+<<<<<<< HEAD
     return render(
         request,
         "learnify/course_detail.html",
         {"course": course, "logged_in_user": logged_in_user},
     )
+=======
+    price = Course.objects.get(price)
+    return render(request, 'learnify/course_detail.html', {'course': course}, {'price': price})
+>>>>>>> kenny
 
 
 def course_create(request):
