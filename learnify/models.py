@@ -47,6 +47,9 @@ class Course(models.Model):
     def __str__(self):
         return self.title
 
+    def price_total(self):
+        return self.price / 100
+
 
 class Video(models.Model):
     VIDEO_FORMAT = [
