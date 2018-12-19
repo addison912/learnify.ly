@@ -4,11 +4,13 @@
 {% block content %}
     
     <div class="course-create">
-        <h1>Create a new course</h1>
-        <form method="POST" class="course-form">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="save btn btn-default">Save</button>
-        </form>
+        <h1 class="new-course">Create a new course</h1>
+        <div class="create-course-div">
+            <form class="new-course-form" method="POST" class="course-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="save btn btn-default">Save</button>
+            </form>
+        </div>
     </div>
 {% endblock %}

@@ -9,6 +9,7 @@
   <link href="{% static 'css/uni-form.css' %}" rel="stylesheet"/>
   <link href="{% static 'css/style.uni-form.css' %}" rel="stylesheet"/>
   <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Learnify</title>
 </head>
 
@@ -37,8 +38,25 @@
     {% block content %} {% endblock %}
   </main>
   <footer>
-    <span>&copy; Learnify 2018</span>
-    COPYRIGHT LEARNIFY 2018
+    <div class="bottom-nav">
+      <p class="first-li"><a>Learnify</a></p>
+      <ul class="footer-ul">
+        <li><a>Courses</a></li>
+        <li><a>Teachers</a></li>
+        <li><a>Pricing</a></li>
+        <li><a>Login</a></li>
+        <li><a>Join Now</a></li>
+      </ul>
+    </div>
+    <div class="social-media">
+      <a href=""><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
+      <a href=""><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
+      <a href=""><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
+    </div>
+    <div class="names">
+      <p class="learnify-2018">&copy; Learnify 2018 is proudly made in San Francisco, CA.</p>
+      <p class="our-names">Moore · Stacey · Downs</p>
+    </div>
   </footer>
 </body>
 
