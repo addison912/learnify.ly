@@ -88,5 +88,13 @@ class Purchase(models.Model):
     purchaser = models.ForeignKey(
         UserProfile, on_delete=models.DO_NOTHING, related_name='purchases')
 
+
     def __str__(self):
         return self.course.title
+
+
+
+# class Purchase (models.Model):
+#     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='purchases')
+#     product = models.ForeignKey(Product)
+#     license_end = models.DateTimeField(default=timezone.now)

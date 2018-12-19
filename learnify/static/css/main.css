@@ -174,6 +174,7 @@ nav ul li:hover:before {
   color: #7FE8EF;
   text-align: center;
   padding: 10px;
+  margin-bottom: 200px;
 }
 
 input[type="submit"] {
@@ -422,13 +423,6 @@ button.stripe-button-el>span {
 /*//////////// footer start ////////////*/
 
 footer {
-  position: absolute;
-  bottom: 100vh;
-  margin-top: 20px;
-  text-align: center;
-  background: black;
-  color: whitesmoke;
-  padding:10px;
   background-color: #003346;
   position: relative;
   width: 100%;

@@ -100,12 +100,12 @@ def profile(request, username):
     profile = UserProfile.objects.get(user=user)
     global logged_in_user
     logged_in_user = profile
+    purchases = Purchase.objects.filter(purchaser=profile)
     return render(
         request,
         "learnify/profile.html",
-        {"profile": profile, "logged_in_user": logged_in_user},
+        {"profile": profile, "logged_in_user": logged_in_user, "purchases":purchases},
     )
-
 
 def about(request):
     return render(request, "learnify/about.html", {"logged_in_user": logged_in_user})
