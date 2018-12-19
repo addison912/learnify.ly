@@ -347,7 +347,7 @@ footer {
 /*/////////// Media Queries //////////////////////*/
 
 /* Course Page */
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1137px) {
   .course-row {
     display: flex;
     flex-direction: column;

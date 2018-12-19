@@ -14,7 +14,7 @@
                 <p>{{course.description}}</p>
                 <p class="course-price">${{course.price_total}}</p>
                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{stripe_key}}"
-                    data-description="Purchase Course" data-amount="{{course.price}}" data-locale="auto">
+                    data-description="Purchase Course" data-amount="{{course.price}}" data-locale="auto" data-label="Purchase Course">
                 </script>
             </a>
         </div>
