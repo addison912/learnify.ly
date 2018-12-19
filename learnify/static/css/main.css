@@ -8,6 +8,10 @@ body {
   background: #7FE8EF;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 main {
   padding: 64px 0 0 0;
 }
@@ -241,7 +245,7 @@ textarea {
 .course-row {
   display: flex;
   height: 300px;
-  margin: 20px 0;
+  margin: 20px 5px 20px 5px;
 }
 
 .course-details {
@@ -265,6 +269,8 @@ button.stripe-button-el>span {
   background-color: #003346;
   color: white;
   background-image: none;
+  padding-bottom: 2px;
+  height: 2.25em;
 }
 
 /* ////////////stripe button end///////////// */
@@ -345,8 +351,9 @@ footer {
   .course-row {
     display: flex;
     flex-direction: column;
-    margin-top:1%;
+    margin:1% 0 0 0;
     height: 100%;
+
   }
 }
 
