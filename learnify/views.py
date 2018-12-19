@@ -42,13 +42,14 @@ def courses(request):
     stripe_key = settings.APIKEY
     return render(request, 'learnify/courses.html', {
         'courses': courses,
-        'stripe_key': stripe_key
+        'stripe_key': stripe_key,
     })
 
 
 def course_detail(request):
     course = Course.objects.get(id=pk)
-    return render(request, 'learnify/course_detail.html', {'course': course})
+    price = Course.objects.get(price)
+    return render(request, 'learnify/course_detail.html', {'course': course}, {'price': price})
 
 
 def course_create(request):
