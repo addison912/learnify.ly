@@ -47,13 +47,6 @@ nav ul {
   border-radius: 50%;
 }
 
-/*//////////// login page ////////////*/
-
-
-.login {
-  color: #7FE8EF;
-  margin-left: 10px;
-}
 
 
 /*//////////// dropdown profile menu ////////////*/
@@ -135,11 +128,21 @@ nav ul li:hover:before {
   font-weight: bold;
 }
 
-/* .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-} */
+.jumbotron input {
+  width: 97%;
+  font-weight: bold;
+  color: #7FE8EF;
+  border-radius: 100px;
+  margin-top: 10px;
+}
+
+.jumbotron input[type='submit'] {
+  margin-bottom: 20px;
+}
+
+.jumbotron form {
+  padding-left: 10px;
+}
 
 .registrationcontainer {
   display: flex;
@@ -147,43 +150,21 @@ nav ul li:hover:before {
   align-items: center;
 }
 
-.jumbotron form {
-  padding-left: 10px;
-  /* display: flex;
-  justify-content: center; */
-}
-
-/* .jumbotron form input {
-  margin-left: 50%;
-  margin-right: 50%;
-} */
-
 .helptext {
   display: none;
 }
 
 .register {
   text-align: center;
-  padding-top: 5px;
-  color: #7FE8EF
+  padding-top: 10px;
+  color: #7FE8EF;
+  font-size: 25px;
 }
 
 .thanks {
   color: #7FE8EF;
   text-align: center;
   padding: 10px;
-}
-
-body>main>div>div>form>input {
-  margin-bottom: 15px;
-  background-color: #7FE8EF;
-}
-
-.jumbotron input {
-  width: 97%;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  color: #003346;
 }
 
 /*//////////// background video ////////////*/
@@ -197,31 +178,6 @@ body>main>div>div>form>input {
   z-index: -1;
 }
 
-
-
-/* Add some content at the bottom of the video/page */
-.content {
-  position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 100%;
-  padding: 20px;
-}
-
-
-/*//////////// course create form start ////////////*/
-
-.course-create {
-  width: 100%;
-  background: #bbbbbb;
-  margin: 0;
-  padding: 16px;
-}
-
-.course-create h1 {
-  margin-top: 0;
-}
 
 /*//////////// forms ////////////*/
 
@@ -240,7 +196,77 @@ textarea {
   resize: none;
 }
 
+/*//////////// login page ////////////*/
 
+
+.login {
+  color: #7FE8EF;
+  margin-left: 10px;
+}
+
+.no-account {
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  color: #003346;
+  margin-left: 25px;
+}
+
+.register-here {
+  color: #003346;
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+.login-form input {
+  margin-bottom: 15px;
+}
+
+.login-form {
+  margin-left: 30%;
+  margin-bottom: 165px;
+}
+
+.login-form-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.username-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.username-label, .password-label {
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+.password-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.username-and-password-input {
+  width: 500px;
+  height: 30px;
+  border-radius: 100px;
+  padding-left: 20px;
+}
+
+.login-button {
+  width: 125px;
+  height: 50px;
+  border-radius: 75px;
+  font-size: 20px;
+  background-color: #003346;
+  color: #7FE8EF;
+}
+
+.login-div {
+  display: flex;
+  flex-direction: row;
+}
 
 /*//////////// course create form end ////////////*/
 /*//////////// course page start ////////////*/
@@ -271,6 +297,60 @@ textarea {
 .course-details p {
   color: whitesmoke;
 }
+
+/* ////////// create new course form //////////// */
+
+.new-course {
+  color: #003346;
+  margin-left: 15px;
+}
+
+.course-create {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-course-form {
+  width: 100%;
+}
+
+.new-course-form input {
+  width: 100%;
+  border-radius: 100px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.new-course-form label {
+  font-size: 25px;
+  color: #003346;
+}
+
+#id_description {
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+}
+
+#id_category {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.create-course-div {
+  width: 500px;
+}
+
+.save {
+  width: 100%;
+  border-radius: 100px;
+  background-color: #003346;
+  color: #7FE8EF;
+  height: 50px;
+  font-size: 20px;
+}
+
 
 /* ////////// stripe button start//////////// */
 
@@ -304,13 +384,64 @@ button.stripe-button-el>span {
 /*//////////// footer start ////////////*/
 
 footer {
-  position: fixed;
-  bottom: 100vh;
-  margin-top: 20px;
-  text-align: center;
-  background: black;
-  color: whitesmoke;
-  padding:10px;
+  background-color: #003346;
+  position: relative;
+  width: 100%;
+  height: 230px;
+  margin-top: 100px;
+  bottom: 0px;
+}
+
+.learnify-2018 {
+  color: #7FE8EF;
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+
+.footer-ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.bottom-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer-ul li {
+  padding: 10px 10px 0 10px;
+  color: #7FE8EF;
+  font-size: 15px;
+}
+
+.first-li {
+  font-size: 30px;
+  margin-right: 20px;
+  margin-left: 10px;
+  font-weight: 700;
+}
+
+.social-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.fa {
+  margin: 20px;
+}
+
+.names {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.our-names {
+  margin-right: 20px;
+  color: #7FE8EF;
+  margin-bottom: 0;
 }
 
 /*///////// About Us Page Start ///////////*/
