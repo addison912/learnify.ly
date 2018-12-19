@@ -13,16 +13,11 @@ import sys
 import os
 
 sys.path.append(os.path.abspath(".env/secrets"))
-
 from config import *
-
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-
-
 
 
 # Quick-start development settings - unsuitable for production
@@ -41,7 +36,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'learnify',
-    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,8 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'stripe',
 ]
-
-CRISPY_TEMPLATE_PACK = 'uni_form'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
