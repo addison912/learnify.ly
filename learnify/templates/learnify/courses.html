@@ -13,9 +13,16 @@
                 <h3 class="course-title">{{ course.title }}</h3><br>
                 <p>{{course.description}}</p>
                 <p class="course-price">${{course.price_total}}</p>
-                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{stripe_key}}"
-                    data-description="Purchase Course" data-amount="{{course.price}}" data-locale="auto" data-label="Purchase Course">
-                </script>
+                <form action="/checkout" method="POST" class="stripeCheckout">
+                    {% csrf_token %}
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" 
+                    data-key="{{stripe_key}}"
+                    data-description="Purchase Course" 
+                    data-amount="{{course.price}}" 
+                    data-locale="auto" 
+                    data-label="Purchase Course">
+                    </script>
+                </form>
             </a>
         </div>
     </li>

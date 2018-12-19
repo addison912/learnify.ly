@@ -5,9 +5,6 @@ from django.contrib.auth.decorators import login_required
 from learnify.forms import *
 from learnify.models import *
 from django.conf import settings
-# from flask import Flask, render_template, request
-# import stripe
-# import os
 
 logged_in_user = None
 
@@ -167,15 +164,3 @@ def user_login(request):
             return HttpResponse("Invalid login details given")
     else:
         return render(request, "learnify/login.html", {})
-
-
-
-# STRIPE CHARGE
-# token = request.form['stripeToken'] # Using Flask
-
-# def charge = stripe.Charge.create(
-#     amount=course_detail.price,
-#     currency='usd',
-#     description='Course Purchase',
-#     source=token,
-#     statement_descriptor='Learnify Course Purchase'
