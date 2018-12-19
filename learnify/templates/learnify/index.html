@@ -15,7 +15,7 @@
                 <h1 class="thanks">Thanks for registering!</h1>
                 {% else %}
                 <h3 class="register">Register to get started</h3>
-                <form enctype="multipart/form-data"           method="POST">
+                <form enctype="multipart/form-data" method="POST">
                     {% csrf_token %}
                     {{ user_form.as_p }}
                     {{ profile_form.as_p }}

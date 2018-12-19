@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from learnify.forms import *
 from learnify.models import *
 from django.conf import settings
@@ -12,17 +13,20 @@ logged_in_user = None
 def index(request):
     registered = False
     global logged_in_user
-    print(logged_in_user.first_name)
-    if request.method == "POST":    
+    if request.method == "POST":
         user_form = UserForm(data=request.POST)
         profile_form = UserProfileForm(data=request.POST)
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save()
+            user.set_password(user.password)
+            user.save()
+            profile = profile_form.save(commit=False)
             profile.user = user
             if "profile_pic" in request.FILES:
                 profile.profile_pic = request.FILES["profile_pic"]
             profile.save()
             registered = True
+            return redirect("user_login")
         else:
             print(user_form.errors, profile_form.errors)
     else:
@@ -77,8 +81,7 @@ def course_create(request):
         if form.is_valid():
             global logged_in_user
             course = form.save(commit=False)
-            owner = logged_in_user.pk
-            course.owner_id = owner
+            course.owner_id = logged_in_user.pk
             course.save()
             return redirect("course_detail", pk=course.pk)
     else:
@@ -126,11 +129,13 @@ def register(request):
             user = user_form.save()
             user.set_password(user.password)
             user.save()
+            profile = profile_form.save(commit=False)
             profile.user = user
             if "profile_pic" in request.FILES:
                 profile.profile_pic = request.FILES["profile_pic"]
             profile.save()
             registered = True
+            return redirect("user_login")
         else:
             print(user_form.errors, profile_form.errors)
     else:
@@ -138,7 +143,7 @@ def register(request):
         profile_form = UserProfileForm()
     return render(
         request,
-        "learnify/registration.html",
+        "learnify/index.html",
         {
             "user_form": user_form,
             "profile_form": profile_form,
