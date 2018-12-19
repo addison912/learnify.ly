@@ -13,7 +13,7 @@ def index(request):
     registered = False
     global logged_in_user
     print(logged_in_user.first_name)
-    if request.method == "POST":
+    if request.method == "POST":    
         user_form = UserForm(data=request.POST)
         profile_form = UserProfileForm(data=request.POST)
         if user_form.is_valid() and profile_form.is_valid():
