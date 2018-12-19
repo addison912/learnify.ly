@@ -8,6 +8,10 @@ body {
   background: #7FE8EF;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 main {
   padding: 64px 0 0 0;
 }
@@ -242,7 +246,7 @@ textarea {
 .course-row {
   display: flex;
   height: 300px;
-  margin: 20px 0;
+  margin: 20px 5px 20px 5px;
 }
 
 .course-description {
@@ -283,6 +287,8 @@ button.stripe-button-el>span {
   background-color: #003346;
   color: white;
   background-image: none;
+  padding-bottom: 2px;
+  height: 2.25em;
 }
 
 /* ////////////stripe button end///////////// */
@@ -345,8 +351,10 @@ footer {
 }
 
 .about-separator {
-  border: 1.25px solid whitesmoke;
+  border: 2px solid whitesmoke;
+  background-color: whitesmoke;
 }
+
 .about-body {
   margin-bottom: 5%;
   margin-top: 2.5%;
@@ -357,12 +365,13 @@ footer {
 /*/////////// Media Queries //////////////////////*/
 
 /* Course Page */
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1137px) {
   .course-row {
     display: flex;
     flex-direction: column;
-    margin-top:1%;
+    margin:1% 0 0 0;
     height: 100%;
+
   }
 }
 

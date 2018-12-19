@@ -54,6 +54,10 @@ def courses(request):
             "logged_in_user": logged_in_user,
         },
     )
+    return render(request, 'learnify/courses.html', {
+        'courses': courses,
+        'stripe_key': stripe_key,
+    })
 
 
 def course_detail(request, pk):
@@ -63,6 +67,8 @@ def course_detail(request, pk):
         "learnify/course_detail.html",
         {"course": course, "logged_in_user": logged_in_user},
     )
+    price = Course.objects.get(price)
+    return render(request, 'learnify/course_detail.html', {'course': course}, {'price': price})
 
 
 def course_create(request):
