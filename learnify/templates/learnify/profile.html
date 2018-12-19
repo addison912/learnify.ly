@@ -3,7 +3,7 @@
 {% block content %}
     {% if user.is_authenticated %}
     <div class="profile-info">
-        <h2 class="profile-name">HI {{profile.first_name}}</h2>
+        <h2 class="profile-name">Hi {{profile.first_name}}</h2>
         <img class="profile-pic" src="/media/{{profile.profile_pic}}">
     </div>
     
@@ -11,4 +11,5 @@
     {% else %}
         <h2><span><a href="register">Register</a></span> or <span><a href="login">login</a></span> to view your profile</h2>
     {% endif %}
+
 {% endblock %}
