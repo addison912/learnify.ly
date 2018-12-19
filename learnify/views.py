@@ -100,10 +100,11 @@ def profile(request, username):
     profile = UserProfile.objects.get(user=user)
     global logged_in_user
     logged_in_user = profile
+    purchases = Purchase.objects.filter(purchaser=profile)
     return render(
         request,
         "learnify/profile.html",
-        {"profile": profile, "logged_in_user": logged_in_user},
+        {"profile": profile, "logged_in_user": logged_in_user, "purchases": purchases},
     )
 
 
@@ -171,3 +172,13 @@ def user_login(request):
             return HttpResponse("Invalid login details given")
     else:
         return render(request, "learnify/login.html", {})
+
+@login_required
+def payment(request):
+    user = User.objects.get(id=request.user.id)
+    purchases = Purchase.objects.filter(purchaser=profile, purchases=course)
+    content = {
+        "stripe_key": settings.STRIPE_TEST_PUBLIC_KEY,
+        "purchases": purchases,
+    }
+    return render(request, "learnify/", content)
