@@ -7,10 +7,30 @@
         <img class="profile-pic" src="/media/{{profile.profile_pic}}">
     </div>
 
-    {% for purchase in purchases %}
-        <h1>{{purchase.course.title }}</h1>
-        <h2>{{purchase.course.price }}</h2>
-    {% endfor %}
+
+        <!-- <h1>{{purchase.course.title }}</h1>
+        <h2>{{purchase.course.price }}</h2> -->
+        <ul class="course-container">
+                {% for purchase in purchases %}
+                <li class="course-row">
+                    <video height="300" controls>
+                        <source src="/media/{{purchase.course.preview_video}}" type="video/webm">
+                        Your browser does not support HTML5 video.
+                    </video>
+                    <div class="course-description">
+                            <h3 class="course-title">{{ purchase.course.title }}</h3><br>
+                            <p>{{purchase.course.description}}</p>
+                            <p class="course-price">${{purchase.course.price_total}}</p>
+                            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{stripe_key}}"
+                                data-description="Purchase Course" data-amount="{{purchases.course.price}}" data-locale="auto" data-label="Purchase Course">
+                            </script>
+                        </a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        
+    
 
     {% else %}
         <h2><span><a href="register">Register</a></span> or <span><a href="login">login</a></span> to view your profile</h2>
