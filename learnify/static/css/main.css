@@ -349,6 +349,50 @@ textarea {
   width: 83.33%;
 }
 
+/*/////////// Review form //////////////////////*/
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-div {
+  width: 83.33%;
+}
+
+.title-label {
+  margin-right: 10px;
+  font-size: 25px;
+}
+
+.title-input {
+  /* border-radius: 100px; */
+  width: 300px;
+  height: 35px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.title-div {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 10px 10px 0;
+}
+
+#review-submit {
+  border-radius: 100px;
+  background-color: #003346;
+  width: 150px;
+  margin-top: 20px;
+  color: #7FE8EF;
+  font-size: 20px;
+}
+
+.review-header {
+  color: #003346;
+}
+
+
 /*//////////// course detail page end ////////////*/
 .new-course-form {
   width: 100%;
@@ -483,6 +527,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-right: 20px;
 }
 
 .footer-ul li {
@@ -496,6 +541,7 @@ footer {
   margin-right: 20px;
   margin-left: 10px;
   font-weight: 700;
+  margin-left: 20px;
 }
 
 .social-media {
@@ -518,6 +564,7 @@ footer {
   margin-right: 20px;
   color: #7FE8EF;
   margin-bottom: 0;
+  margin-right: 20px;
 }
 
 /*///////// About Us Page Start ///////////*/
@@ -559,6 +606,62 @@ footer {
 
 /*////////// About us page end ////////////////////*/
 
+
+/*////////// Hamburger Menu ////////////////////*/
+
+.hamburger {
+  height: 70px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  display: none;
+  z-index: 10;
+  padding: 10px;
+}
+
+.cross {
+  height: 50px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 10px
+}
+
+.hamburger-list {
+  margin-top: 63px;
+  position: absolute;
+  width: 100%;
+  background-color: #003346;
+  color: #7FE8EF;
+  z-index: 10;
+}
+
+.hamburger-list li {
+  padding: 15px;
+  text-align: center;
+  border-top: 1px #7FE8EF solid;
+}
+
+.hamburger-list li :hover {
+  opacity: 0.7;
+}
+
+.hamburger-nav {
+  background-color: #003346;
+  z-index: 10;
+  display: none;
+}
+
+/* .hamburger-div {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/*/////////// Charge Page ///////////////////////*/
+
 .chargemessage {
   text-align: center;
   margin-top: 14.5%;
@@ -588,5 +691,18 @@ footer {
 
   .about-article {
     margin-top: 5%;
+  }
+}
+
+
+@media screen and (max-width:500px) {
+  .base-nav {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .hamburger-nav {
+    display: block;
   }
 }
