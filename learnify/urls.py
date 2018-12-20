@@ -11,7 +11,6 @@ urlpatterns = [
     path('courses/create', views.course_create, name='course_create'),
     path('profile/<slug:username>', views.profile, name='profile'),
     path('user_login', views.user_login, name='user_login'),
-    path('register', views.register, name='register'),
     path('logout', views.user_logout, name='logout'),
     # path('api/users', views.sendJson, name='sendJson'),
     path('special', views.special, name='special'),
