@@ -14,7 +14,7 @@ urlpatterns = [
     path('logout', views.user_logout, name='logout'),
     # path('api/users', views.sendJson, name='sendJson'),
     path('special', views.special, name='special'),
-    path('charge/', views.charge, name='charge')
+    path('charge/<int:pk>', views.checkout, name='charge')
 ]
 
 if settings.DEBUG:

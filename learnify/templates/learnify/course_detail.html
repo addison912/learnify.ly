@@ -10,13 +10,17 @@
             <a href="{% url 'course_detail' pk=course.id %}">
                 <h3 class="course-title">{{ course.title }}</h3><br>
                 <p>{{course.description}}</p>
-                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" 
-                data-key="{{stripe_key}}"
-                data-description="Purchase Course" 
-                data-amount="{{course.price}}" 
-                data-locale="auto"
-                data-label="Purchase Course">
-                </script>
+                <form action =  "{% url 'charge' pk=course.id %}" method="post">
+                    {% csrf_token %}
+                    <script src="https://checkout.stripe.com/checkout.js" 
+                    class="stripe-button" 
+                    data-key="{{stripe_key}}"
+                    data-description="{{course.title}}" 
+                    data-amount="{{course.price}}" 
+                    data-locale="auto" 
+                    data-label="Purchase Course">
+                    </script>
+                </form>
             </a>
         </div>
     </div>

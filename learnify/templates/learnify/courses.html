@@ -13,7 +13,11 @@
                 <h3 class="course-title">{{ course.title }}</h3><br>
                 <p>{{course.description}}</p>
                 <p class="course-price">${{course.price}}</p>
+<<<<<<< HEAD
                 <form action = "{% url 'charge' %}" method="post">
+=======
+                <form action =  "{% url 'charge' pk=course.id %}" method="post">
+>>>>>>> kenny
                     {% csrf_token %}
                     <script src="https://checkout.stripe.com/checkout.js" 
                     class="stripe-button" 

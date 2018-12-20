@@ -143,15 +143,33 @@ def user_login(request):
     else:
         return render(request, "learnify/login.html", {})
 
-
 @login_required 
-def charge(request): # new
-    if request.method == 'POST':
+def checkout(request, pk):
+    global logged_in_user
+    new_purchase = Purchase(
+        course = Course.objects.get(id=pk),
+        purchaser = logged_in_user
+    )
+    print('HERE IS THE TYPE')
+    print(type(new_purchase.course.price))
+    print( round(new_purchase.course.price, 2))
+
+    if request.method == "POST":
+        token = request.POST.get("stripeToken")
+
+    try:
         charge = stripe.Charge.create(
-            amount=500,
+            amount= int(new_purchase.course.price),
             currency='usd',
-            description=(f"{Course.title}"),
+            description=Course.title,
             source=request.POST['stripeToken']
         )
+
+        new_purchase.charge_id = charge.id
+    
+    except stripe.error.CardError as ce:
+        return False, ce
+
+    else:
+        new_purchase.save()
         return render(request, 'learnify/charge.html')
-        
