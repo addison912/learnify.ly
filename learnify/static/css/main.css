@@ -499,6 +499,10 @@ button.stripe-button-el>span {
   padding: 12px;
 }
 
+.purchased-header {
+  text-align: center;
+}
+
 /*//////////// profile end ////////////*/
 /*//////////// footer start ////////////*/
 
@@ -526,6 +530,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-right: 20px;
 }
 
 .footer-ul li {
@@ -539,6 +544,7 @@ footer {
   margin-right: 20px;
   margin-left: 10px;
   font-weight: 700;
+  margin-left: 20px;
 }
 
 .social-media {
@@ -561,13 +567,14 @@ footer {
   margin-right: 20px;
   color: #7FE8EF;
   margin-bottom: 0;
+  margin-right: 20px;
 }
 
 /*///////// About Us Page Start ///////////*/
 
 .about-header {
   text-align: center;
-  margin-top: 2.5%;
+  margin-top: 5%;
 }
 
 .about-pic {
