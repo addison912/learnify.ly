@@ -179,7 +179,7 @@ def checkout(request, pk):
 
     try:
         charge = stripe.Charge.create(
-            amount= int(new_purchase.course.price),
+            amount= int(new_purchase.course.price * 100),
             currency='usd',
             description=Course.title,
             source=request.POST['stripeToken']

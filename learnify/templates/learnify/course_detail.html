@@ -13,7 +13,7 @@
                 <p>{{course.description}}</p>
                 {% if logged_in_user.pk != course.owner_id %}
                 <p class="course-price">Price: ${{course.price}}</p>
-                <form action = "{% url 'charge' pk=course.id %}" method="post">
+                <form action =  "{% url 'charge' pk=course.id %}" method="post">
                     {% csrf_token %}
                     <script src="https://checkout.stripe.com/checkout.js" 
                     class="stripe-button" 
