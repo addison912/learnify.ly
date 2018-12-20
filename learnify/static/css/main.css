@@ -621,7 +621,8 @@ footer {
   position: absolute;
   top: 0px;
   right: 0px;
-  padding: 10px
+  padding: 10px;
+  display: none;
 }
 
 .hamburger-list {
@@ -631,6 +632,7 @@ footer {
   background-color: #003346;
   color: #7FE8EF;
   z-index: 10;
+  display: none;
 }
 
 .hamburger-list li {

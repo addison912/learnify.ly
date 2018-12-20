@@ -77,7 +77,14 @@ def course_detail(request, pk):
         {"course": course, "logged_in_user": logged_in_user},
     )
     price = Course.objects.get(price)
-    return render(request, 'learnify/course_detail.html', {'course': course,'price': price, "logged_in_user": logged_in_user})
+    return render(
+        request,
+        'learnify/course_detail.html',
+        {'form': form,
+        'course': course,
+        'price': price,
+        "logged_in_user": logged_in_user
+        })
 
 
 def course_create(request):
@@ -114,7 +121,9 @@ def add_video(request, pk):
     return render(
         request,
         "learnify/add_video.html",
-        {"form": form, "logged_in_user": logged_in_user, "course":course},
+        {"form": form,
+        "logged_in_user": logged_in_user,
+        "course":course},
     )
 
 
