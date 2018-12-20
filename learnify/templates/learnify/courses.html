@@ -10,7 +10,7 @@
         </video>
         <div class="course-description">
             <a href="{% url 'course_detail' pk=course.id %}">
-                <h3 class="course-title">{{course.title}}</h3><br>
+                <h3 class="course-title">{{ course.title }}</h3><br>
                 <p>{{course.description}}</p>
                 <p class="course-price">${{course.price}}</p>
                 <form action = "{% url 'charge' %}" method="post">
@@ -31,4 +31,3 @@
 </ul>
 
 {% endblock %}
-

@@ -10,8 +10,12 @@
             <a href="{% url 'course_detail' pk=course.id %}">
                 <h3 class="course-title">{{ course.title }}</h3><br>
                 <p>{{course.description}}</p>
-                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{stripe_key}}"
-                    data-description="Purchase Course" data-amount="{{course.price}}" data-locale="auto">
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" 
+                data-key="{{stripe_key}}"
+                data-description="Purchase Course" 
+                data-amount="{{course.price}}" 
+                data-locale="auto"
+                data-label="Purchase Course">
                 </script>
             </a>
         </div>
