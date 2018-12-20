@@ -527,6 +527,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-right: 20px;
 }
 
 .footer-ul li {
@@ -540,6 +541,7 @@ footer {
   margin-right: 20px;
   margin-left: 10px;
   font-weight: 700;
+  margin-left: 20px;
 }
 
 .social-media {
@@ -562,6 +564,7 @@ footer {
   margin-right: 20px;
   color: #7FE8EF;
   margin-bottom: 0;
+  margin-right: 20px;
 }
 
 /*///////// About Us Page Start ///////////*/
@@ -621,8 +624,12 @@ footer {
   position: absolute;
   top: 0px;
   right: 0px;
+<<<<<<< HEAD
   padding: 10px;
   display: none;
+=======
+  padding: 10px
+>>>>>>> kenny
 }
 
 .hamburger-list {
@@ -632,7 +639,10 @@ footer {
   background-color: #003346;
   color: #7FE8EF;
   z-index: 10;
+<<<<<<< HEAD
   display: none;
+=======
+>>>>>>> kenny
 }
 
 .hamburger-list li {
@@ -659,6 +669,10 @@ footer {
   align-items: center;
 } */
 
+<<<<<<< HEAD
+=======
+/*/////////// Charge Page ///////////////////////*/
+>>>>>>> kenny
 
 .chargemessage {
   text-align: center;
