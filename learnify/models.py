@@ -49,7 +49,7 @@ class Course(models.Model):
         return self.title
 
     def price_total(self):
-        return self.price / 100
+        return self.price * 100
 
 
 class Video(models.Model):
@@ -88,6 +88,7 @@ class Purchase(models.Model):
         Course, on_delete=models.DO_NOTHING, related_name='purchases')
     purchaser = models.ForeignKey(
         UserProfile, on_delete=models.DO_NOTHING, related_name='purchases')
+    charge_id = models.CharField(max_length=500)
 
 
     def __str__(self):
