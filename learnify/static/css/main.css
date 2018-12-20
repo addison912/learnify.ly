@@ -500,6 +500,10 @@ button.stripe-button-el>span {
   padding: 12px;
 }
 
+.purchased-header {
+  text-align: center;
+}
+
 /*//////////// profile end ////////////*/
 /*//////////// footer start ////////////*/
 

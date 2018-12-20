@@ -70,11 +70,12 @@ def courses(request):
 
 def course_detail(request, pk):
     course = Course.objects.get(id=pk)
+    stripe_key = settings.APIKEY
     global logged_in_user
     return render(
         request,
         "learnify/course_detail.html",
-        {"course": course, "logged_in_user": logged_in_user},
+        {"course": course, "logged_in_user": logged_in_user, "stripe_key": stripe_key},
     )
     price = Course.objects.get(price)
     return render(
@@ -83,7 +84,8 @@ def course_detail(request, pk):
         {'form': form,
         'course': course,
         'price': price,
-        "logged_in_user": logged_in_user
+        "logged_in_user": logged_in_user,
+        "stripe_key": stripe_key,
         })
 
 
