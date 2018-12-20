@@ -23,7 +23,7 @@ class CourseForm(forms.ModelForm):
     class Meta():
         model = Course
         fields = ('title', 'category', 'price', 'description',
-                  'preview_video')
+                'preview_video')
 
 
 class VideoForm(forms.ModelForm):
@@ -31,3 +31,9 @@ class VideoForm(forms.ModelForm):
     class Meta():
         model = Video
         fields = ('title', 'video', 'description', 'order_number')
+
+class ReviewForm(forms.ModelForm):
+
+    class Meta():
+        model = Review
+        fields = ('title', 'body', 'author', 'course')

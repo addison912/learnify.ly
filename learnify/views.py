@@ -144,6 +144,8 @@ def user_login(request):
         return render(request, "learnify/login.html", {})
 
 
+
+
 @login_required 
 def charge(request): # new
     if request.method == 'POST':

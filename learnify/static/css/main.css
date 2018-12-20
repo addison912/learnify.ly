@@ -346,6 +346,48 @@ textarea {
   width: 83.33%;
 }
 
+/*/////////// Review form //////////////////////*/
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-div {
+  width: 83.33%;
+}
+
+.title-label {
+  margin-right: 10px;
+  font-size: 25px;
+}
+
+.title-input {
+  /* border-radius: 100px; */
+  width: 300px;
+  height: 35px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.title-div {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 10px 10px 0;
+}
+
+#review-submit {
+  border-radius: 100px;
+  background-color: #003346;
+  width: 150px;
+  margin-top: 20px;
+  color: #7FE8EF;
+  font-size: 20px;
+}
+
+.review-header {
+  color: #003346;
+}
 
 
 /*//////////// course detail page end ////////////*/
