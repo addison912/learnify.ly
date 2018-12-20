@@ -27,9 +27,9 @@
                 {% endif %}
             </a>
             {% if logged_in_user.pk == course.owner_id %}
-            <button class="delete">Delete Course</button>
-            <button class="edit">Edit Course</button>
-            <button class="add-video-button">Add Video</button>
+            <a><button class="delete">Delete Course</button><a/>
+            <a><button class="edit">Edit Course</button><a/>
+            <a href="{% url 'add_video' pk=course.id %}"><button class="add-video-button">Add Video</button></a>
             {% endif %}
         </div>
         <div class="review-div">

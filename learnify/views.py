@@ -109,15 +109,17 @@ def course_create(request):
     )
 
 def add_video(request, pk):
+    global logged_in_user
     course = Course.objects.get(id=pk)
     if request.method == "POST":
         form = VideoForm(request.POST, request.FILES)
         if form.is_valid():
-            global logged_in_user
             video = form.save(commit=False)
+            video.course_id = course.pk
             if "video" in request.FILES:
                 course.preview_video = request.FILES["video"]
             video.save()
+            return redirect("course_detail", pk=course.pk)
     else:
         form = VideoForm()
     return render(
