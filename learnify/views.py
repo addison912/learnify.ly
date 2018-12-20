@@ -107,11 +107,7 @@ def profile(request, username):
     return render(
         request,
         "learnify/profile.html",
-<<<<<<< HEAD
         {"profile": profile, "logged_in_user": logged_in_user, "purchases": purchases},
-=======
-        {"profile": profile, "logged_in_user": logged_in_user, "purchases":purchases},
->>>>>>> d807340f1baea1507679ed9e69c713f6dfe419bc
     )
 
 def about(request):

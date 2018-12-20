@@ -14,6 +14,7 @@ class UserProfile(models.Model):
         return self.user.username
 
 
+
 class Course(models.Model):
     COURSE_CATEGORIES = [
         ('arts_humanities', 'Arts and Humanities'),
