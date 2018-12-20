@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <nav>
+  <nav class="base-nav">
     <ul>
       <li><a href="{% url 'index' %}">Home</a></li>
       <li><a href="{% url 'courses' %}">Courses</a></li>
@@ -24,6 +24,18 @@
       {% endif %}
     </ul>
   </nav>
+  <nav class="hamburger-nav">
+    <img class="hamburger" src="https://image.flaticon.com/icons/svg/1046/1046886.svg" alt="">
+    <img class="cross" src="https://image.flaticon.com/icons/svg/149/149158.svg" alt="">
+  </nav>
+  <ul class="hamburger-list">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Courses</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Profile</a></li>
+    <li><a href="#">Create Course</a></li>
+    <li><a href="#">Logout</a></li>
+  </ul>
   <main class="container">
     <div class="nav-dropdown">
       <div class="dropdown-menu">
