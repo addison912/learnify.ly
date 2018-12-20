@@ -31,10 +31,16 @@
             <a><button class="edit">Edit Course</button><a/>
             <a href="{% url 'add_video' pk=course.id %}"><button class="add-video-button">Add Video</button></a>
             {% endif %}
+            {% if logged_in_user.pk == course.owner_id %}
+            {% endif %}
         </div>
         <div class="review-div">
             <h2 class="review-header">Leave a Review</h2>
-            {{ form.as_p }}
+            <form class="review-form" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="save btn btn-default">Save Review</button>
+            </form>
         </div>
     </div>
     {% endif %}

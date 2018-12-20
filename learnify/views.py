@@ -50,50 +50,49 @@ def index(request):
 
 
 def courses(request):
+    global logged_in_user
     courses = Course.objects.all()
     stripe_key = settings.APIKEY
-    return render(
-        request,
-        "learnify/courses.html",
-        {
-            "courses": courses,
-            "stripe_key": stripe_key,
-            "logged_in_user": logged_in_user,
-        },
-    )
+    purchases = Purchase.objects.filter(purchaser=logged_in_user)
     return render(request, 'learnify/courses.html', {
         'courses': courses,
         'stripe_key': stripe_key,
-        "logged_in_user": logged_in_user
+        "logged_in_user": logged_in_user,
+        "purchases": purchases
     })
 
 
 def course_detail(request, pk):
+    global logged_in_user
     course = Course.objects.get(id=pk)
     stripe_key = settings.APIKEY
-    global logged_in_user
-    return render(
-        request,
-        "learnify/course_detail.html",
-        {"course": course, "logged_in_user": logged_in_user, "stripe_key": stripe_key},
-    )
-    price = Course.objects.get(price)
+    purchases = Purchase.objects.filter(purchaser=logged_in_user)
+    if request.method == "POST":
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.author_id = logged_in_user.pk
+            review.course_id = course.pk
+            review.save()
+    else:
+        form = ReviewForm()
     return render(
         request,
         'learnify/course_detail.html',
-        {'form': form,
+        {
+        'form': form,
         'course': course,
-        'price': price,
         "logged_in_user": logged_in_user,
         "stripe_key": stripe_key,
+        "purchases": purchases
         })
 
 
 def course_create(request):
+    global logged_in_user
     if request.method == "POST":
         form = CourseForm(request.POST, request.FILES)
         if form.is_valid():
-            global logged_in_user
             course = form.save(commit=False)
             course.owner_id = logged_in_user.pk
             if "preview_video" in request.FILES:

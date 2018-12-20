@@ -2,10 +2,6 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-    <div class="profile-info">
-        <h2 class="profile-name">Hi {{profile.first_name}}</h2>
-        <img class="profile-pic" src="/media/{{profile.profile_pic}}">
-    </div>
     <h2 class="purchased-header">Purchased Courses</h2>
         <ul class="course-container">                
                 {% for purchase in purchases %}

@@ -433,22 +433,10 @@ textarea {
   font-size: 20px;
 }
 
-.edit {
-  background: rgb(255, 255, 99)
-}
-
-.delete {
-  background: rgb(255, 77, 77)
-}
-
-.add-video-button {
-  height:30px;
-  padding: 0 10px;
-}
-
 .edit, .delete, .add-video-button {
   height:30px;
   padding: 0 10px;
+  background: #C8EFF2;
 }
 /*//////////// video form container ////////////*/
 
