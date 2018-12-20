@@ -6,8 +6,11 @@ from django.contrib.auth.models import User
 from learnify.forms import *
 from learnify.models import *
 from django.conf import settings
+from django.views.generic.base import TemplateView
+import stripe
 
 logged_in_user = None
+stripe.api_key = settings.SECRET
 
 
 def index(request):
@@ -104,11 +107,7 @@ def profile(request, username):
     return render(
         request,
         "learnify/profile.html",
-<<<<<<< HEAD
         {"profile": profile, "logged_in_user": logged_in_user, "purchases": purchases},
-=======
-        {"profile": profile, "logged_in_user": logged_in_user, "purchases":purchases},
->>>>>>> 7310e1ff0701ccea0a57b5a9de87b502f5b857a5
     )
 
 def about(request):
@@ -176,12 +175,15 @@ def user_login(request):
     else:
         return render(request, "learnify/login.html", {})
 
-@login_required
-def payment(request):
-    user = User.objects.get(id=request.user.id)
-    purchases = Purchase.objects.filter(purchaser=profile, purchases=course)
-    content = {
-        "stripe_key": settings.STRIPE_TEST_PUBLIC_KEY,
-        "purchases": purchases,
-    }
-    return render(request, "learnify/", content)
+
+@login_required 
+def charge(request): # new
+    if request.method == 'POST':
+        charge = stripe.Charge.create(
+            amount=500,
+            currency='usd',
+            description=(f"{Course.title}"),
+            source=request.POST['stripeToken']
+        )
+        return render(request, 'learnify/charge.html')
+        

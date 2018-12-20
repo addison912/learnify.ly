@@ -9,7 +9,7 @@
 
     {% for purchase in purchases %}
         <h1>{{purchase.course.title }}</h1>
-        <h2>{{purchase.course.price }}</h2>
+        <h2>${{purchase.course.price_total }}</h2>
     {% endfor %}
 
     {% else %}
