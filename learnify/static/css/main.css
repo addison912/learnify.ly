@@ -658,6 +658,12 @@ footer {
 } */
 
 
+.chargemessage {
+  text-align: center;
+  margin-top: 14.5%;
+  margin-bottom: 14%;
+}
+
 /*/////////// Media Queries //////////////////////*/
 
 /* Course Page */
