@@ -104,11 +104,7 @@ def profile(request, username):
     return render(
         request,
         "learnify/profile.html",
-<<<<<<< HEAD
-        {"profile": profile, "logged_in_user": logged_in_user, "purchases": purchases},
-=======
         {"profile": profile, "logged_in_user": logged_in_user, "purchases":purchases},
->>>>>>> 7310e1ff0701ccea0a57b5a9de87b502f5b857a5
     )
 
 def about(request):
@@ -124,38 +120,6 @@ def special(request):
 def user_logout(request):
     logout(request)
     return redirect("index")
-
-
-def register(request):
-    registered = False
-    if request.method == "POST":
-        user_form = UserForm(data=request.POST)
-        profile_form = UserProfileForm(data=request.POST)
-        if user_form.is_valid() and profile_form.is_valid():
-            user = user_form.save()
-            user.set_password(user.password)
-            user.save()
-            profile = profile_form.save(commit=False)
-            profile.user = user
-            if "profile_pic" in request.FILES:
-                profile.profile_pic = request.FILES["profile_pic"]
-            profile.save()
-            registered = True
-            return redirect("user_login")
-        else:
-            print(user_form.errors, profile_form.errors)
-    else:
-        user_form = UserForm()
-        profile_form = UserProfileForm()
-    return render(
-        request,
-        "learnify/index.html",
-        {
-            "user_form": user_form,
-            "profile_form": profile_form,
-            "registered": registered,
-        },
-    )
 
 
 def user_login(request):
