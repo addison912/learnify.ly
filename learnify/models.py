@@ -48,7 +48,7 @@ class Course(models.Model):
         return self.title
 
     def price_total(self):
-        return self.price / 100
+        return self.price * 100
 
 
 class Video(models.Model):

@@ -10,11 +10,11 @@
         </video>
         <div class="course-description">
             <a href="{% url 'course_detail' pk=course.id %}">
-                <h3 class="course-title">{{ course.title }}</h3><br>
+                <h3 class="course-title">{{course.title}}</h3><br>
                 <p>{{course.description}}</p>
-                <p class="course-price">${{course.price_total}}</p>
+                <p class="course-price">${{course.price}}</p>
                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{stripe_key}}"
-                    data-description="Purchase Course" data-amount="{{course.price}}" data-locale="auto" data-label="Purchase Course">
+                    data-description="Purchase Course" data-amount="{{course.price_total}}" data-locale="auto" data-label="Purchase Course">
                 </script>
             </a>
         </div>
@@ -23,3 +23,4 @@
 </ul>
 
 {% endblock %}
+
