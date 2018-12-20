@@ -8,11 +8,11 @@ urlpatterns = [
     path('about', views.about, name='about'),
     path('courses', views.courses, name='courses'),
     path('courses/<int:pk>', views.course_detail, name='course_detail'),
+    path('courses/<int:pk>/add_video', views.add_video, name='add_video.html'),
     path('courses/create', views.course_create, name='course_create'),
     path('profile/<slug:username>', views.profile, name='profile'),
     path('user_login', views.user_login, name='user_login'),
     path('logout', views.user_logout, name='logout'),
-    # path('api/users', views.sendJson, name='sendJson'),
     path('special', views.special, name='special'),
     path('charge/', views.charge, name='charge')
 ]

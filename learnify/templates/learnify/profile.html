@@ -18,12 +18,9 @@
                         Your browser does not support HTML5 video.
                     </video>
                     <div class="course-description">
+                        <a href="{% url 'course_detail' pk=purchase.course.id %}">
                             <h3 class="course-title">{{ purchase.course.title }}</h3><br>
                             <p>{{purchase.course.description}}</p>
-                            <p class="course-price">${{purchase.course.price_total}}</p>
-                            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{stripe_key}}"
-                                data-description="Purchase Course" data-amount="{{purchases.course.price}}" data-locale="auto" data-label="Purchase Course">
-                            </script>
                         </a>
                     </div>
                 </li>

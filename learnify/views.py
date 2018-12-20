@@ -64,18 +64,20 @@ def courses(request):
     return render(request, 'learnify/courses.html', {
         'courses': courses,
         'stripe_key': stripe_key,
+        "logged_in_user": logged_in_user
     })
 
 
 def course_detail(request, pk):
     course = Course.objects.get(id=pk)
+    global logged_in_user
     return render(
         request,
         "learnify/course_detail.html",
         {"course": course, "logged_in_user": logged_in_user},
     )
     price = Course.objects.get(price)
-    return render(request, 'learnify/course_detail.html', {'course': course}, {'price': price})
+    return render(request, 'learnify/course_detail.html', {'course': course,'price': price, "logged_in_user": logged_in_user})
 
 
 def course_create(request):
@@ -95,6 +97,24 @@ def course_create(request):
         request,
         "learnify/create_course_form.html",
         {"form": form, "logged_in_user": logged_in_user},
+    )
+
+def add_video(request, pk):
+    course = Course.objects.get(id=pk)
+    if request.method == "POST":
+        form = VideoForm(request.POST, request.FILES)
+        if form.is_valid():
+            global logged_in_user
+            video = form.save(commit=False)
+            if "video" in request.FILES:
+                course.preview_video = request.FILES["video"]
+            video.save()
+    else:
+        form = VideoForm()
+    return render(
+        request,
+        "learnify/add_video.html",
+        {"form": form, "logged_in_user": logged_in_user, "course":course},
     )
 
 

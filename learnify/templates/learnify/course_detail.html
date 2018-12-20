@@ -1,6 +1,7 @@
 {% extends 'learnify/base.html' %}
 
 {% block content %}
+    {% if user.is_authenticated %}
     <div class="course-preview-container">
         <video class="preview-video" width="83.33%" controls>
             <source src="/media/{{course.preview_video}}" type="video/webm">
@@ -10,10 +11,27 @@
             <a href="{% url 'course_detail' pk=course.id %}">
                 <h3 class="course-title">{{ course.title }}</h3><br>
                 <p>{{course.description}}</p>
-                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{stripe_key}}"
-                    data-description="Purchase Course" data-amount="{{course.price}}" data-locale="auto">
-                </script>
+                {% if logged_in_user.pk != course.owner_id %}
+                <p class="course-price">Price: ${{course.price}}</p>
+                <form action = "{% url 'charge' %}" method="post">
+                    {% csrf_token %}
+                    <script src="https://checkout.stripe.com/checkout.js" 
+                    class="stripe-button" 
+                    data-key="{{stripe_key}}"
+                    data-description="{{course.title}}" 
+                    data-amount="{{course.price_total}}" 
+                    data-locale="auto" 
+                    data-label="Purchase Course">
+                    </script>
+                </form>
+                {% endif %}
             </a>
+            {% if logged_in_user.pk == course.owner_id %}
+            <button class="delete">Delete Course</button>
+            <button class="edit">Edit Course</button>
+            <button class="add-video-button">Add Video</button>
+            {% endif %}
         </div>
     </div>
+    {% endif %}
 {% endblock %}

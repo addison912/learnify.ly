@@ -28,7 +28,7 @@ a {
 }
 
 nav {
-  background: #003346;
+  background: rgba(0,51,70, 1);
   margin: 0;
   position: fixed;
   top: 0;
@@ -166,7 +166,6 @@ nav ul li:hover:before {
 .register {
   text-align: center;
   padding-top: 10px;
-  color: #7FE8EF;
   font-size: 25px;
 }
 
@@ -179,7 +178,6 @@ nav ul li:hover:before {
 
 input[type="submit"] {
   margin-bottom: 15px;
-  background-color: #7FE8EF;
   height: 50px;
 }
 
@@ -321,6 +319,11 @@ textarea {
   color: whitesmoke;
 }
 
+.course-description .course-price {
+  color: black;
+  font-weight: 800;
+}
+
 /*//////////// course page end ////////////*/
 /*//////////// course detail page start ////////////*/
 
@@ -345,8 +348,6 @@ textarea {
 .course-preview-details {
   width: 83.33%;
 }
-
-
 
 /*//////////// course detail page end ////////////*/
 .new-course-form {
@@ -389,7 +390,42 @@ textarea {
   font-size: 20px;
 }
 
+.edit {
+  background: rgb(255, 255, 99)
+}
 
+.delete {
+  background: rgb(255, 77, 77)
+}
+
+.add-video-button {
+  height:30px;
+  padding: 0 10px;
+}
+
+.edit, .delete, .add-video-button {
+  height:30px;
+  padding: 0 10px;
+}
+/*//////////// video form container ////////////*/
+
+.video-form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-video-form {
+  display: flex;
+  flex-direction: column;
+  color: #003346;
+  font-weight: 700;
+}
+
+.add-video-form input{
+  width: 100%;
+}
 /* ////////// stripe button start//////////// */
 
 button.stripe-button-el,

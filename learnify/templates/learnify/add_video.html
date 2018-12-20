@@ -3,10 +3,10 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-    <div class="course-create">
-        <h1 class="new-course">Create a new course</h1>
-        <div class="create-course-div">
-            <form enctype="multipart/form-data" class="new-course-form" method="POST">
+    <div class="video-form-container">
+        <h1>Add course videos</h1>
+        <div>
+            <form enctype="multipart/form-data" class="add-video-form" method="POST">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit" class="save btn btn-default">Save</button>
