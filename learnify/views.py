@@ -2,27 +2,34 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from learnify.forms import *
 from learnify.models import *
 from django.conf import settings
+from django.views.generic.base import TemplateView
+import stripe
 
 logged_in_user = None
+stripe.api_key = settings.SECRET
 
 
 def index(request):
     registered = False
     global logged_in_user
-    print(logged_in_user.first_name)
-    if request.method == "POST":    
+    if request.method == "POST":
         user_form = UserForm(data=request.POST)
         profile_form = UserProfileForm(data=request.POST)
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save()
+            user.set_password(user.password)
+            user.save()
+            profile = profile_form.save(commit=False)
             profile.user = user
             if "profile_pic" in request.FILES:
                 profile.profile_pic = request.FILES["profile_pic"]
             profile.save()
             registered = True
+            return redirect("user_login")
         else:
             print(user_form.errors, profile_form.errors)
     else:
@@ -73,12 +80,13 @@ def course_detail(request, pk):
 
 def course_create(request):
     if request.method == "POST":
-        form = CourseForm(request.POST)
+        form = CourseForm(request.POST, request.FILES)
         if form.is_valid():
             global logged_in_user
             course = form.save(commit=False)
-            owner = logged_in_user.pk
-            course.owner_id = owner
+            course.owner_id = logged_in_user.pk
+            if "preview_video" in request.FILES:
+                course.preview_video = request.FILES["preview_video"]
             course.save()
             return redirect("course_detail", pk=course.pk)
     else:
@@ -95,12 +103,12 @@ def profile(request, username):
     profile = UserProfile.objects.get(user=user)
     global logged_in_user
     logged_in_user = profile
+    purchases = Purchase.objects.filter(purchaser=profile)
     return render(
         request,
         "learnify/profile.html",
-        {"profile": profile, "logged_in_user": logged_in_user},
+        {"profile": profile, "logged_in_user": logged_in_user, "purchases": purchases},
     )
-
 
 def about(request):
     return render(request, "learnify/about.html", {"logged_in_user": logged_in_user})
@@ -115,36 +123,6 @@ def special(request):
 def user_logout(request):
     logout(request)
     return redirect("index")
-
-
-def register(request):
-    registered = False
-    if request.method == "POST":
-        user_form = UserForm(data=request.POST)
-        profile_form = UserProfileForm(data=request.POST)
-        if user_form.is_valid() and profile_form.is_valid():
-            user = user_form.save()
-            user.set_password(user.password)
-            user.save()
-            profile.user = user
-            if "profile_pic" in request.FILES:
-                profile.profile_pic = request.FILES["profile_pic"]
-            profile.save()
-            registered = True
-        else:
-            print(user_form.errors, profile_form.errors)
-    else:
-        user_form = UserForm()
-        profile_form = UserProfileForm()
-    return render(
-        request,
-        "learnify/registration.html",
-        {
-            "user_form": user_form,
-            "profile_form": profile_form,
-            "registered": registered,
-        },
-    )
 
 
 def user_login(request):
@@ -164,3 +142,16 @@ def user_login(request):
             return HttpResponse("Invalid login details given")
     else:
         return render(request, "learnify/login.html", {})
+
+
+@login_required 
+def charge(request): # new
+    if request.method == 'POST':
+        charge = stripe.Charge.create(
+            amount=500,
+            currency='usd',
+            description=(f"{Course.title}"),
+            source=request.POST['stripeToken']
+        )
+        return render(request, 'learnify/charge.html')
+        

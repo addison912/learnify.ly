@@ -6,7 +6,7 @@
     <div class="course-create">
         <h1 class="new-course">Create a new course</h1>
         <div class="create-course-div">
-            <form class="new-course-form" method="POST" class="course-form">
+            <form enctype="multipart/form-data" class="new-course-form" method="POST" class="course-form">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit" class="save btn btn-default">Save</button>
