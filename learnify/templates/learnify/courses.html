@@ -10,11 +10,11 @@
         </video>
         <div class="course-description">
             <a href="{% url 'course_detail' pk=course.id %}">
-                <h3 class="course-title">{{course.title}}</h3><br>
+                <h3 class="course-title">{{ course.title }}</h3><br>
                 <p>{{course.description}}</p>
                 {% if logged_in_user.pk != course.owner_id %}
                 <p class="course-price">Price: ${{course.price}}</p>
-                <form action = "{% url 'charge' %}" method="post">
+                <form action =  "{% url 'charge' pk=course.id %}" method="post">
                     {% csrf_token %}
                     <script src="https://checkout.stripe.com/checkout.js" 
                     class="stripe-button" 
@@ -33,4 +33,3 @@
 </ul>
 
 {% endblock %}
-
