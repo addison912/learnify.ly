@@ -151,11 +151,11 @@ nav ul li:hover:before {
 }
 
 .jumbotron input {
-  width: 97%;
-  font-weight: bold;
-  color: #7FE8EF;
   border-radius: 100px;
   margin-top: 10px;
+  width: 97%;
+  font-weight: bold;
+  color: #003346;
 }
 
 .jumbotron input[type='submit'] {
@@ -174,11 +174,7 @@ nav ul li:hover:before {
   text-align: center;
   padding-top: 10px;
   font-size: 25px;
-<<<<<<< HEAD
-  color: #7FE8EF;
-=======
   color:whitesmoke;
->>>>>>> 34dfbd9ed6d29aa85420895b492b8f82f0427a12
 }
 
 .whattodo-header {
@@ -213,12 +209,6 @@ input[type="submit"] {
   height: 50px;
 }
 
-.jumbotron input {
-  width: 97%;
-  font-weight: bold;
-  color: #003346;
-}
-
 /*//////////// background video ////////////*/
 
 .myvideo {
@@ -232,6 +222,10 @@ input[type="submit"] {
 
 
 /*//////////// forms ////////////*/
+
+form a {
+  color: #333;
+}
 
 input,
 button,
@@ -592,6 +586,7 @@ footer {
 
 .bottom-nav {
   text-align: center;
+  padding-top: 5px;
 }
 
 .footer-ul li {
@@ -599,11 +594,6 @@ footer {
   color: #7FE8EF;
   font-size: 15px;
   visibility: hidden;
-}
-
-
-.bottom-nav {
-  padding-top: 5px;
 }
 
 footer .first-li a {
@@ -764,6 +754,29 @@ footer .first-li a {
   .whattodo-container {
     display: flex;
     flex-direction: column;
+  }  
+}
+
+@media screen and (max-width: 780px) {
+  .login-form {
+    width:100%;
+    margin-left: 15%;
+  }
+
+
+  .username-and-password-input{
+    width:75%;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .no-account {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .username-and-password-input{
+    width:65%;
   }
 }
 
@@ -785,4 +798,15 @@ footer .first-li a {
   footer {
     font-size: 60%;
   }  
+}
+
+@media screen and (max-width: 430px) {
+  .login-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .no-account {
+    margin-left: 0;
+  }
 }
