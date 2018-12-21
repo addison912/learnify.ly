@@ -12,21 +12,10 @@
             <a href="{% url 'course_detail' pk=course.id %}">
                 <h3 class="course-title">{{ course.title }}</h3><br>
                 <p>{{course.description}}</p>
-                {% if logged_in_user.pk != course.owner_id %}
-                <p class="course-price">Price: ${{course.price}}</p>
-                <form action =  "{% url 'charge' pk=course.id %}" method="post">
-                    {% csrf_token %}
-                    <script src="https://checkout.stripe.com/checkout.js" 
-                    class="stripe-button" 
-                    data-key="{{stripe_key}}"
-                    data-description="{{course.title}}" 
-                    data-amount="{{course.price_total}}" 
-                    data-locale="auto" 
-                    data-label="Purchase Course">
-                    </script>
-                </form>
-                {% endif %}
             </a>
+                {% if logged_in_user.pk == course.owner_id%} 
+                <a href="{% url 'edit_course' pk=course.id %}"><button class="edit">Edit Course</button><a/>
+                {% endif %}
         </div>
     </li>
     {% endfor %}

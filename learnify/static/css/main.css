@@ -326,7 +326,6 @@ button:hover{
 .course-container {
   margin: 0;
   padding:0;
-
 }
 
 .course-row {
@@ -362,6 +361,19 @@ button:hover{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.video-list-container {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding:0;
+  width: 100%;
+}
+
+.video-container {
+  display: flex;
+  width: 83.33%
 }
 /* ////////// create new course form //////////// */
 
