@@ -8,11 +8,8 @@ from learnify.models import *
 from django.conf import settings
 from django.views.generic.base import TemplateView
 import stripe
-<<<<<<< HEAD
-=======
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
->>>>>>> 01df8eb53ed1723875df06f1a6a0232c5c3be49a
 
 logged_in_user = None
 stripe.api_key = settings.SECRET
