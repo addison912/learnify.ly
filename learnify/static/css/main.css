@@ -29,7 +29,7 @@ a {
 }
 
 nav {
-  background: rgba(0,51,70, 1);
+  background: #003346;
   margin: 0;
   position: fixed;
   top: 0;
@@ -222,10 +222,6 @@ input[type="submit"] {
 
 
 /*//////////// forms ////////////*/
-
-form a {
-  color: #333;
-}
 
 input,
 button,
@@ -577,6 +573,7 @@ footer {
 
 .bottom-nav {
   text-align: center;
+  padding-top: 5px;
 }
 
 .footer-ul li {
@@ -584,11 +581,6 @@ footer {
   color: #7FE8EF;
   font-size: 15px;
   visibility: hidden;
-}
-
-
-.bottom-nav {
-  padding-top: 5px;
 }
 
 footer .first-li a {

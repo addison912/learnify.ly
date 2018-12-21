@@ -8,7 +8,6 @@ from learnify.models import *
 from django.conf import settings
 from django.views.generic.base import TemplateView
 import stripe
-from django.views.decorators.csrf import csrf_exempt
 
 logged_in_user = None
 stripe.api_key = settings.SECRET
@@ -68,12 +67,6 @@ def course_detail(request, pk):
     course = Course.objects.get(id=pk)
     stripe_key = settings.APIKEY
     purchases = Purchase.objects.filter(purchaser=logged_in_user)
-    purchased = False
-    for purchase in purchases:
-        if purchase.pk == course.pk:
-            purchased = True
-    videos = Video.objects.filter(course=course)
-    print(purchased)
     if request.method == "POST":
         form = ReviewForm(request.POST)
         if form.is_valid():
@@ -91,13 +84,9 @@ def course_detail(request, pk):
         'course': course,
         "logged_in_user": logged_in_user,
         "stripe_key": stripe_key,
-        "purchased": purchased,
-        "course": course, 
-        "videos": videos
+        "purchases": purchases
         })
-    
-def about(request):
-    return render(request, "learnify/about.html", {"logged_in_user": logged_in_user})
+
 
 def course_create(request):
     global logged_in_user
@@ -118,32 +107,6 @@ def course_create(request):
         {"form": form, "logged_in_user": logged_in_user},
     )
 
-@login_required
-def edit_course(request, pk):
-    course = Course.objects.get(id=pk)
-    global logged_in_user
-    if request.method == "POST":
-        form = CourseForm(request.POST, request.FILES, instance=course)
-        if form.is_valid():
-            courseform = form.save(commit=False)
-            courseform.owner_id = logged_in_user.pk
-            if "preview_video" in request.FILES:
-                courseform.preview_video = request.FILES["preview_video"]
-            courseform.save()
-            return redirect("course_detail", pk=course.pk)
-    else:
-        form = CourseForm(instance=course)
-        return render(
-            request,
-            "learnify/edit_course.html",
-            {
-            "form":form, 
-            "logged_in_user":logged_in_user, 
-            "course": course
-            })
-
-
-@login_required
 def add_video(request, pk):
     global logged_in_user
     course = Course.objects.get(id=pk)
@@ -166,7 +129,7 @@ def add_video(request, pk):
         "course":course},
     )
 
-@login_required
+
 def profile(request, username):
     user = User.objects.get(username=username)
     profile = UserProfile.objects.get(user=user)
@@ -179,6 +142,9 @@ def profile(request, username):
         {"profile": profile, "logged_in_user": logged_in_user, "purchases": purchases},
     )
 
+def about(request):
+    return render(request, "learnify/about.html", {"logged_in_user": logged_in_user})
+
 
 @login_required
 def special(request):
@@ -188,8 +154,6 @@ def special(request):
 @login_required
 def user_logout(request):
     logout(request)
-    global logged_in_user
-    logged_in_user = None
     return redirect("index")
 
 
@@ -218,9 +182,6 @@ def checkout(request, pk):
         course = Course.objects.get(id=pk),
         purchaser = logged_in_user
     )
-    print('HERE IS THE TYPE')
-    print(type(new_purchase.course.price))
-    print( round(new_purchase.course.price, 2))
 
     if request.method == "POST":
         token = request.POST.get("stripeToken")
