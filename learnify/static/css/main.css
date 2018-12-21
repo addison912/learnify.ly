@@ -169,11 +169,31 @@ nav ul li:hover:before {
   font-size: 25px;
 }
 
-.thanks {
-  color: #7FE8EF;
+.whattodo-header {
+  color: white;
   text-align: center;
   padding: 10px;
-  margin-bottom: 200px;
+  margin-bottom: 0px;
+}
+
+.whattodo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+.index-separator {
+  border: .5px solid white;
+  background-color: solid white;
+}
+
+.whattodo-article {
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  color: #7FE8EF;
+  text-align: center;
 }
 
 input[type="submit"] {
@@ -672,8 +692,7 @@ footer {
     display: flex;
     flex-direction: column;
     height: 100%;
-    margin: 0 0 20px 0;
-
+    margin: 0 0 20px 0; 
   }
 }
 
