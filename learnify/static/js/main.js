@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    $('.nav-dropdown').hide();
     $('.nav-profile-pic').on('click', function () {
         $('.nav-dropdown').slideToggle('slow');
     });
@@ -17,5 +16,11 @@ $(document).ready(function () {
         $('.hamburger-list').slideToggle('slow', function () {
         });
     });
+
+
+
+
+
+
 });
 

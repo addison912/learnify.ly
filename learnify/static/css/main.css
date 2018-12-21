@@ -14,6 +14,7 @@ body {
 
 main {
   padding: 64px 0 0 0;
+  min-height: 70vh;
 }
 
 ul {
@@ -52,6 +53,12 @@ nav ul {
   border-radius: 50%;
 }
 
+.hamburger:hover,
+.cross:hover,
+.nav-profile-pic:hover {
+  cursor:pointer;
+}
+
 
 
 /*//////////// dropdown profile menu ////////////*/
@@ -69,7 +76,7 @@ nav ul {
 
 .nav-dropdown {
   position: fixed;
-  display: inline-block;
+  display: none;
   background-color: #ccf1ff;
   z-index: 100;
   top: 64px;
@@ -167,6 +174,7 @@ nav ul li:hover:before {
   text-align: center;
   padding-top: 10px;
   font-size: 25px;
+  color:whitesmoke;
 }
 
 .whattodo-header {
@@ -234,6 +242,10 @@ textarea {
   border-radius: 5px;
   padding: 5px;
   resize: none;
+}
+
+button:hover{
+  cursor:pointer;
 }
 
 /*//////////// login page ////////////*/
