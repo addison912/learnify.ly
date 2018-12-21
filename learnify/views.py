@@ -95,6 +95,9 @@ def course_detail(request, pk):
         "videos": videos
         })
 
+def about(request):
+    return render(request, "learnify/about.html", {"logged_in_user": logged_in_user})
+
 def course_create(request):
     global logged_in_user
     if request.method == "POST":
@@ -113,7 +116,7 @@ def course_create(request):
         "learnify/create_course_form.html",
         {"form": form, "logged_in_user": logged_in_user},
     )
-
+@login_required
 def edit_course(request, pk):
     global logged_in_user
     course = Course.objects.get(id=pk)
@@ -128,7 +131,7 @@ def edit_course(request, pk):
         })
 
 
-
+@login_required
 def add_video(request, pk):
     global logged_in_user
     course = Course.objects.get(id=pk)
@@ -151,7 +154,7 @@ def add_video(request, pk):
         "course":course},
     )
 
-
+@login_required
 def profile(request, username):
     user = User.objects.get(username=username)
     profile = UserProfile.objects.get(user=user)
@@ -163,9 +166,6 @@ def profile(request, username):
         "learnify/profile.html",
         {"profile": profile, "logged_in_user": logged_in_user, "purchases": purchases},
     )
-
-def about(request):
-    return render(request, "learnify/about.html", {"logged_in_user": logged_in_user})
 
 
 @login_required

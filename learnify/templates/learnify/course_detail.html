@@ -4,7 +4,7 @@
     
     <div class="course-preview-container">
         <video class="preview-video" width="83.33%" controls>
-            <source src="/media/{{course.preview_video}}" type="video/webm">
+            <source src="/media/{{course.preview_video}}" type="{{course.preview_video_format}}">
             Your browser does not support HTML5 video.
         </video>
         <div class="course-description course-preview-details">
@@ -13,7 +13,7 @@
             {% if purchased == True %}
             <p>you already purchased this course</p>
             {% endif %}
-            {% if logged_in_user.pk == course.owner_id%} 
+            {% if logged_in_user.pk == course.owner_id %} 
             <a><button class="delete">Delete Course</button><a/>
             <a href="{% url 'edit_course' pk=course.id %}"><button class="edit">Edit Course</button><a/>
             <a href="{% url 'add_video' pk=course.id %}"><button class="add-video-button">Add Video</button></a>
@@ -32,12 +32,12 @@
             </form>
             {% endif %}
         </div>
-        {% if purchased == True %}
+        {% if purchased == True or logged_in_user.pk == course.owner_id%}
             <ul class="video-list-container">
             {% for video in videos %}
-                <li class="course-row video-container">
+                <li class="video-container" style="order:{{video.order_number}}"">
                     <video height="300" controls>
-                        <source src="/media/{{video.video}}" type="video/webm">
+                        <source src="/media/{{video.video}}" type="{{video.video_format}}">
                         Your browser does not support HTML5 video.
                     </video>
                     <div class="course-description">

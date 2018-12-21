@@ -365,14 +365,17 @@ button:hover{
 
 .video-list-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
   padding:0;
   width: 100%;
 }
 
 .video-container {
+  margin: 10px 0 0 0;
   display: flex;
+  flex-direction: row;
   width: 83.33%
 }
 /* ////////// create new course form //////////// */
@@ -707,6 +710,10 @@ footer .first-li a {
     height: 100%;
     margin: 0 0 20px 0; 
   }
+  .video-container{
+    flex-direction: column;
+    background: #333;
+  }
 }
 
 /* About Us Page */
@@ -729,10 +736,7 @@ footer .first-li a {
     display: flex;
     flex-direction: column;
   }
-
-  
 }
-
 
 @media screen and (max-width:500px) {
   .base-nav {
