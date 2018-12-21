@@ -324,6 +324,15 @@ button:hover{
   flex-direction: row;
 }
 
+.alert-success {
+  background-color: white;
+  width: 350px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #FFD9DF;
+  border: 1px red solid;
+}
+
 /*//////////// course create form end ////////////*/
 /*//////////// course page start ////////////*/
 

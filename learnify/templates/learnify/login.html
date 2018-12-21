@@ -22,6 +22,15 @@
                 <p class="no-account">Don't have an account yet?<a class="register-here" href="{% url 'index' %}">Register here</a>.</p>
             </div>
         </form>
+        {% for message in messages %}
+
+        <div class="alert alert-success">
+            <a class="close" href="#" data-dismiss="alert">×</a>
+
+            {{ message }}
+
+        </div>
+{% endfor %}
     </div>
 </div>
 {% endblock %}
