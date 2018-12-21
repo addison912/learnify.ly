@@ -223,6 +223,10 @@ input[type="submit"] {
 
 /*//////////// forms ////////////*/
 
+form a {
+  color: #333;
+}
+
 input,
 button,
 select {

@@ -16,25 +16,5 @@ $(document).ready(function () {
         $('.hamburger-list').slideToggle('slow', function () {
         });
     });
-
-    $("#course-edit-submit").on("submit", (e) => {
-        e.preventDefault;
-        let id = $("#course-edit-submit").attr("data-id")
-        $.ajax({
-            method: "PUT",
-            url: `/course/${id}/edit_course`,
-            success: editCourseSuccess(id),
-            error: editCourseError
-        });
-    });
 });
-
-function editCourseSuccess(id) {
-    console.log("successfully edited course")
-    window.location.replace(`/courses/${id}`);
-}
-
-function editCourseError() {
-    console.log("failed to edit course")
-}
 
