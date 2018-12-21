@@ -117,19 +117,30 @@ def course_create(request):
         "learnify/create_course_form.html",
         {"form": form, "logged_in_user": logged_in_user},
     )
+
 @login_required
 def edit_course(request, pk):
-    global logged_in_user
     course = Course.objects.get(id=pk)
-    form = CourseForm()
-    return render(
-        request,
-        "learnify/edit_course.html",
-        {
-        "form":form, 
-        "logged_in_user":logged_in_user, 
-        "course": course
-        })
+    global logged_in_user
+    if request.method == "POST":
+        form = CourseForm(request.POST, request.FILES, instance=course)
+        if form.is_valid():
+            courseform = form.save(commit=False)
+            courseform.owner_id = logged_in_user.pk
+            if "preview_video" in request.FILES:
+                courseform.preview_video = request.FILES["preview_video"]
+            courseform.save()
+            return redirect("course_detail", pk=course.pk)
+    else:
+        form = CourseForm(instance=course)
+        return render(
+            request,
+            "learnify/edit_course.html",
+            {
+            "form":form, 
+            "logged_in_user":logged_in_user, 
+            "course": course
+            })
 
 
 @login_required
@@ -177,6 +188,8 @@ def special(request):
 @login_required
 def user_logout(request):
     logout(request)
+    global logged_in_user
+    logged_in_user = None
     return redirect("index")
 
 
