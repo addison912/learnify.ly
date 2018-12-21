@@ -68,6 +68,7 @@ def course_detail(request, pk):
     global logged_in_user
     course = Course.objects.get(id=pk)
     stripe_key = settings.APIKEY
+    reviews = Review.objects.filter(course=course)
     purchases = Purchase.objects.filter(purchaser=logged_in_user)
     purchased = False
     for purchase in purchases:
@@ -94,7 +95,8 @@ def course_detail(request, pk):
         "stripe_key": stripe_key,
         "purchased": purchased,
         "course": course, 
-        "videos": videos
+        "videos": videos,
+        "reviews": reviews
         })
     
 def about(request):

@@ -463,7 +463,6 @@ button:hover{
 }
 
 .title-input {
-  /* border-radius: 100px; */
   width: 300px;
   height: 35px;
   text-align: center;
@@ -489,7 +488,39 @@ button:hover{
   color: #003346;
 }
 
+/*reviews*/
+#review-container {
+  width: 83.33vw;
+}
 
+.review {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  background: #58A2A6;
+  color: whitesmoke;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.review h4 {
+  margin: 0
+}
+
+.review p {
+  margin: 0
+}
+
+.review hr {
+  width: 100%;
+  border: 1px solid whitesmoke;
+}
+
+.review-user {
+  color:#003346
+}
 /*//////////// course detail page end ////////////*/
 .new-course-form {
   width: 100%;

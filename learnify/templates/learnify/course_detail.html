@@ -14,10 +14,10 @@
             <p>you already purchased this course</p>
             {% endif %}
             {% if logged_in_user.pk == course.owner_id %} 
-            <a><button class="delete">Delete Course</button><a/>
-            <a href="{% url 'edit_course' pk=course.id %}"><button class="edit">Edit Course</button><a/>
-            <a href="{% url 'add_video' pk=course.id %}"><button class="add-video-button">Add Video</button></a>
-            {% elif purchased == false %}
+                <a><button class="delete">Delete Course</button><a/>
+                <a href="{% url 'edit_course' pk=course.id %}"><button class="edit">Edit Course</button><a/>
+                <a href="{% url 'add_video' pk=course.id %}"><button class="add-video-button">Add Video</button></a>
+            {% elif purchased == False %}
             <p class="course-price">Price: ${{course.price}}</p>
             <form action =  "{% url 'charge' pk=course.id %}" method="post">
                 {% csrf_token %}
@@ -60,6 +60,17 @@
             </form>
         </div>
         {% endif %}
+        <div id="review-container">
+            <h3>Reviews</h3>
+            {% for review in reviews %}
+            <div class="review">
+                <h4 class="review-user">{{ review.author }} wrote:</h4>
+                <hr/>
+                <h4>{{ review.title }}</h4><br>
+                <p>{{ review.body }}</p>
+            </div>
+            {% endfor %}
+        </div>
     </div>
     
 
