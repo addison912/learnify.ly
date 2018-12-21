@@ -293,16 +293,15 @@ textarea {
 /*//////////// course page start ////////////*/
 
 .course-container {
-
   margin: 0;
-  padding: 20px 0;
-  background: rgb(130, 197, 202);
+  padding:0;
+
 }
 
 .course-row {
   display: flex;
   height: 300px;
-  margin: 20px 5px 20px 5px;
+  margin: 24px 0;
 }
 
 .course-description {
@@ -359,6 +358,22 @@ textarea {
 
 .review-div {
   width: 83.33%;
+}
+
+.review-form p {
+  width: 100%;
+}
+
+#id_title {
+  width: 50%;
+}
+
+#id_body {
+  width: 100%;
+}
+
+.save {
+  width: 100px;
 }
 
 .title-label {
@@ -435,22 +450,10 @@ textarea {
   font-size: 20px;
 }
 
-.edit {
-  background: rgb(255, 255, 99)
-}
-
-.delete {
-  background: rgb(255, 77, 77)
-}
-
-.add-video-button {
-  height:30px;
-  padding: 0 10px;
-}
-
 .edit, .delete, .add-video-button {
   height:30px;
   padding: 0 10px;
+  background: #C8EFF2;
 }
 /*//////////// video form container ////////////*/
 
@@ -501,6 +504,10 @@ button.stripe-button-el>span {
   padding: 12px;
 }
 
+.purchased-header {
+  text-align: center;
+}
+
 /*//////////// profile end ////////////*/
 /*//////////// footer start ////////////*/
 
@@ -528,6 +535,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-right: 20px;
 }
 
 .footer-ul li {
@@ -541,6 +549,7 @@ footer {
   margin-right: 20px;
   margin-left: 10px;
   font-weight: 700;
+  margin-left: 20px;
 }
 
 .social-media {
@@ -563,13 +572,14 @@ footer {
   margin-right: 20px;
   color: #7FE8EF;
   margin-bottom: 0;
+  margin-right: 20px;
 }
 
 /*///////// About Us Page Start ///////////*/
 
 .about-header {
   text-align: center;
-  margin-top: 2.5%;
+  margin-top: 5%;
 }
 
 .about-pic {
@@ -608,31 +618,31 @@ footer {
 /*////////// Hamburger Menu ////////////////////*/
 
 .hamburger {
-  height: 70px;
+  height: 44px;
   position: absolute;
   top: 0px;
   right: 0px;
   display: none;
   z-index: 10;
-  padding: 10px;
+  padding: 14px 14px 0 0;
 }
 
 .cross {
-  height: 50px;
+  height: 44px;
   position: absolute;
   top: 0px;
   right: 0px;
-  padding: 10px;
+  padding: 14px 14px 0 0;
   display: none;
 }
 
 .hamburger-list {
-  margin-top: 63px;
+  margin-top: 64px;
   position: absolute;
   width: 100%;
   background-color: #003346;
   color: #7FE8EF;
-  z-index: 10;
+  z-index: 1;
   display: none;
 }
 
@@ -652,14 +662,6 @@ footer {
   display: none;
 }
 
-/* .hamburger-div {
-  height: 60px;
-  width: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
 
 .chargemessage {
   text-align: center;
@@ -674,8 +676,8 @@ footer {
   .course-row {
     display: flex;
     flex-direction: column;
-    margin:1% 0 0 0;
     height: 100%;
+    margin: 0 0 20px 0;
 
   }
 }

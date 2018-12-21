@@ -4,19 +4,17 @@ $(document).ready(function () {
         $('.nav-dropdown').slideToggle('slow');
     });
 
-    $('.cross').hide();
-    $('.hamburger-list').hide();
-    $('.hamburger').on('click', function() {
-        $('.hamburger-list').slideToggle('slow', function() {
-            $('.cross').show();
-            $('.hamburger').hide();
+    $('.hamburger').on('click', function () {
+        $('.cross').show();
+        $('.hamburger').hide();
+        $('.hamburger-list').slideToggle('slow', function () {
         });
     });
 
-    $('.cross').on('click', function() {
-        $('.hamburger-list').slideToggle('slow', function() {
-            $('.hamburger').show();
-            $('.cross').hide();
+    $('.cross').on('click', function () {
+        $('.hamburger').show();
+        $('.cross').hide();
+        $('.hamburger-list').slideToggle('slow', function () {
         });
     });
     

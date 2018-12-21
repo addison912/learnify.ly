@@ -2,15 +2,8 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-    <div class="profile-info">
-        <h2 class="profile-name">Hi {{profile.first_name}}</h2>
-        <img class="profile-pic" src="/media/{{profile.profile_pic}}">
-    </div>
-
-
-        <!-- <h1>{{purchase.course.title }}</h1>
-        <h2>{{purchase.course.price }}</h2> -->
-        <ul class="course-container">
+    <h2 class="purchased-header">Purchased Courses</h2>
+        <ul class="course-container">                
                 {% for purchase in purchases %}
                 <li class="course-row">
                     <video height="300" controls>
