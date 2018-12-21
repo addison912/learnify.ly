@@ -318,6 +318,15 @@ button:hover{
   flex-direction: row;
 }
 
+.alert-success {
+  background-color: white;
+  width: 350px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #FFD9DF;
+  border: 1px red solid;
+}
+
 /*//////////// course create form end ////////////*/
 /*//////////// course page start ////////////*/
 
@@ -604,6 +613,7 @@ footer {
 
 .bottom-nav {
   text-align: center;
+  padding-top: 5px;
 }
 
 .footer-ul li {
@@ -611,11 +621,6 @@ footer {
   color: #7FE8EF;
   font-size: 15px;
   visibility: hidden;
-}
-
-
-.bottom-nav {
-  padding-top: 5px;
 }
 
 footer .first-li a {
