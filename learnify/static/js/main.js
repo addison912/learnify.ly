@@ -16,5 +16,21 @@ $(document).ready(function () {
         $('.hamburger-list').slideToggle('slow', function () {
         });
     });
+
+    // courses filter function
+    $("#course-search").on("keyup", function () {
+        var value = $(this)
+            .val()
+            .toLowerCase();
+        $(".course-row").filter(function () {
+            $(this).toggle(
+                $(this)
+                    .text()
+                    .toLowerCase()
+                    .indexOf(value) > -1
+            );
+        });
+    });
+
 });
 

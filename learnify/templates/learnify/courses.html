@@ -1,6 +1,9 @@
 {% extends 'learnify/base.html' %}
 
 {% block content %}
+<div id="course-search-container">
+    <input id="course-search" type="text" placeholder="search courses" /><img id="search-icon" src="/static/media/images/search.png">
+</div>
 <ul class="course-container">
     {% for course in courses %}
     <li class="course-row">
