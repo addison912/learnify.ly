@@ -8,6 +8,11 @@ from learnify.models import *
 from django.conf import settings
 from django.views.generic.base import TemplateView
 import stripe
+<<<<<<< HEAD
+=======
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib import messages
+>>>>>>> 01df8eb53ed1723875df06f1a6a0232c5c3be49a
 
 logged_in_user = None
 stripe.api_key = settings.SECRET
@@ -171,7 +176,9 @@ def user_login(request):
         else:
             print("Someone tried to login and failed.")
             print(f"They used username: {username} and password {password}")
-            return HttpResponse("Invalid login details given")
+            # return HttpResponse("Invalid login details given")
+            messages.error(request,'Incorrect login details! Try again.')
+            return redirect('user_login')
     else:
         return render(request, "learnify/login.html", {})
 
