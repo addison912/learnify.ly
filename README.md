@@ -24,10 +24,14 @@ In terms of future development for Learnify.ly, potential new features include:
 * Adding a subscribe feature
 * Monetising the application further by targeting ads based on data we collect
 
-### The contributors of this project are Kenny Downs, Addison Moore and Harry Stacey
+#### Contributors
+
+The contributors of this project are Kenny Downs, Addison Moore and Harry Stacey.
 
 https://github.com/krdowns
+
 https://github.com/addison912
+
 https://github.com/harrystacey123
 
 
