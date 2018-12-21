@@ -16,9 +16,6 @@ $(document).ready(function () {
         $('.hamburger-list').slideToggle('slow', function () {
         });
     });
-<<<<<<< HEAD
-    
-=======
 
     $("#course-edit-submit").on("submit", (e) => {
         e.preventDefault;
@@ -30,7 +27,6 @@ $(document).ready(function () {
             error: editCourseError
         });
     });
->>>>>>> 34dfbd9ed6d29aa85420895b492b8f82f0427a12
 });
 
 function editCourseSuccess(id) {
