@@ -14,6 +14,7 @@ body {
 
 main {
   padding: 64px 0 0 0;
+  min-height: 70vh;
 }
 
 ul {
@@ -52,6 +53,12 @@ nav ul {
   border-radius: 50%;
 }
 
+.hamburger:hover,
+.cross:hover,
+.nav-profile-pic:hover {
+  cursor:pointer;
+}
+
 
 
 /*//////////// dropdown profile menu ////////////*/
@@ -69,7 +76,7 @@ nav ul {
 
 .nav-dropdown {
   position: fixed;
-  display: inline-block;
+  display: none;
   background-color: #ccf1ff;
   z-index: 100;
   top: 64px;
@@ -167,14 +174,38 @@ nav ul li:hover:before {
   text-align: center;
   padding-top: 10px;
   font-size: 25px;
+<<<<<<< HEAD
   color: #7FE8EF;
+=======
+  color:whitesmoke;
+>>>>>>> 34dfbd9ed6d29aa85420895b492b8f82f0427a12
 }
 
-.thanks {
-  color: #7FE8EF;
+.whattodo-header {
+  color: white;
   text-align: center;
   padding: 10px;
-  margin-bottom: 200px;
+  margin-bottom: 0px;
+}
+
+.whattodo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 60px;
+  margin-bottom: 12.5px;
+}
+
+.index-separator {
+  border: .5px solid white;
+  background-color: solid white;
+}
+
+.whattodo-article {
+  margin-right: 5%;
+  margin-left: 5%;
+  color: #7FE8EF;
+  text-align: center;
 }
 
 input[type="submit"] {
@@ -215,6 +246,10 @@ textarea {
   border-radius: 5px;
   padding: 5px;
   resize: none;
+}
+
+button:hover{
+  cursor:pointer;
 }
 
 /*//////////// login page ////////////*/
@@ -295,7 +330,6 @@ textarea {
 .course-container {
   margin: 0;
   padding:0;
-
 }
 
 .course-row {
@@ -331,6 +365,22 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.video-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding:0;
+  width: 100%;
+}
+
+.video-container {
+  margin: 10px 0 0 0;
+  display: flex;
+  flex-direction: row;
+  width: 83.33%
 }
 /* ////////// create new course form //////////// */
 
@@ -532,24 +582,26 @@ footer {
 }
 
 .bottom-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-right: 20px;
+  text-align: center;
 }
 
 .footer-ul li {
   padding: 10px 10px 0 10px;
   color: #7FE8EF;
   font-size: 15px;
+  visibility: hidden;
 }
 
-.first-li {
-  font-size: 30px;
-  margin-right: 20px;
-  margin-left: 10px;
+
+.bottom-nav {
+  padding-top: 5px;
+}
+
+footer .first-li a {
+  font-size: 40px;
   font-weight: 700;
-  margin-left: 20px;
+  padding-bottom: -10px;
+  color: white;
 }
 
 .social-media {
@@ -662,7 +714,6 @@ footer {
   display: none;
 }
 
-
 .chargemessage {
   text-align: center;
   margin-top: 14.5%;
@@ -677,8 +728,11 @@ footer {
     display: flex;
     flex-direction: column;
     height: 100%;
-    margin: 0 0 20px 0;
-
+    margin: 0 0 20px 0; 
+  }
+  .video-container{
+    flex-direction: column;
+    background: #333;
   }
 }
 
@@ -693,8 +747,16 @@ footer {
   .about-article {
     margin-top: 5%;
   }
-}
 
+  .container {
+    margin-right: 10px;
+  }
+
+  .whattodo-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 @media screen and (max-width:500px) {
   .base-nav {
@@ -706,4 +768,12 @@ footer {
   .hamburger-nav {
     display: block;
   }
+  
+  .whattodo-container a {
+    width: 100vw;
+  }
+
+  footer {
+    font-size: 60%;
+  }  
 }

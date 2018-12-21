@@ -68,6 +68,12 @@ def course_detail(request, pk):
     course = Course.objects.get(id=pk)
     stripe_key = settings.APIKEY
     purchases = Purchase.objects.filter(purchaser=logged_in_user)
+    purchased = False
+    for purchase in purchases:
+        if purchase.pk == course.pk:
+            purchased = True
+    videos = Video.objects.filter(course=course)
+    print(purchased)
     if request.method == "POST":
         form = ReviewForm(request.POST)
         if form.is_valid():
@@ -85,7 +91,9 @@ def course_detail(request, pk):
         'course': course,
         "logged_in_user": logged_in_user,
         "stripe_key": stripe_key,
-        "purchases": purchases
+        "purchased": purchased,
+        "course": course, 
+        "videos": videos
         })
 
 @csrf_exempt
@@ -104,6 +112,8 @@ def create_review(request):
         review_form = ReviewForm()
     return render(request, 'learnify/review_detail.html', {'review_form': review_form})
     
+def about(request):
+    return render(request, "learnify/about.html", {"logged_in_user": logged_in_user})
 
 def course_create(request):
     global logged_in_user
@@ -123,7 +133,22 @@ def course_create(request):
         "learnify/create_course_form.html",
         {"form": form, "logged_in_user": logged_in_user},
     )
+@login_required
+def edit_course(request, pk):
+    global logged_in_user
+    course = Course.objects.get(id=pk)
+    form = CourseForm()
+    return render(
+        request,
+        "learnify/edit_course.html",
+        {
+        "form":form, 
+        "logged_in_user":logged_in_user, 
+        "course": course
+        })
 
+
+@login_required
 def add_video(request, pk):
     global logged_in_user
     course = Course.objects.get(id=pk)
@@ -146,7 +171,7 @@ def add_video(request, pk):
         "course":course},
     )
 
-
+@login_required
 def profile(request, username):
     user = User.objects.get(username=username)
     profile = UserProfile.objects.get(user=user)
@@ -158,9 +183,6 @@ def profile(request, username):
         "learnify/profile.html",
         {"profile": profile, "logged_in_user": logged_in_user, "purchases": purchases},
     )
-
-def about(request):
-    return render(request, "learnify/about.html", {"logged_in_user": logged_in_user})
 
 
 @login_required
