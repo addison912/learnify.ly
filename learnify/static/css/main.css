@@ -573,6 +573,7 @@ footer {
 
 .bottom-nav {
   text-align: center;
+  padding-top: 5px;
 }
 
 .footer-ul li {
@@ -580,11 +581,6 @@ footer {
   color: #7FE8EF;
   font-size: 15px;
   visibility: hidden;
-}
-
-
-.bottom-nav {
-  padding-top: 5px;
 }
 
 footer .first-li a {
