@@ -181,7 +181,7 @@ nav ul li:hover:before {
   flex-direction: row;
   justify-content: space-around;
   margin-top: 60px;
-  margin-bottom: 30px;
+  margin-bottom: 12.5px;
 }
 
 .index-separator {
@@ -677,7 +677,6 @@ footer {
   display: none;
 }
 
-
 .chargemessage {
   text-align: center;
   margin-top: 14.5%;
@@ -707,6 +706,17 @@ footer {
   .about-article {
     margin-top: 5%;
   }
+
+  .container {
+    margin-right: 10px;
+  }
+
+  .whattodo-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  
 }
 
 
@@ -719,5 +729,9 @@ footer {
   }
   .hamburger-nav {
     display: block;
+  }
+  
+  .whattodo-container a {
+    width: 100vw;
   }
 }
