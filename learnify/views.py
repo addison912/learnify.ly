@@ -95,22 +95,6 @@ def course_detail(request, pk):
         "course": course, 
         "videos": videos
         })
-
-@csrf_exempt
-def create_review(request):
-    print(request)
-    global logged_in_user
-    # course = Course.objects.get(id=course_id)
-    if request.method == "POST":
-        print('in post')
-        review_form = ReviewForm(request.POST)
-        print(review_form)
-        if review_form.is_valid:
-            review = review_form.save()
-            # return redirect("learnify/course_detail.html", {"course": course, "logged_in_user": logged_in_user},)
-    else:
-        review_form = ReviewForm()
-    return render(request, 'learnify/review_detail.html', {'review_form': review_form})
     
 def about(request):
     return render(request, "learnify/about.html", {"logged_in_user": logged_in_user})
