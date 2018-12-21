@@ -8,6 +8,7 @@ from learnify.models import *
 from django.conf import settings
 from django.views.generic.base import TemplateView
 import stripe
+from django.views.decorators.csrf import csrf_exempt
 
 logged_in_user = None
 stripe.api_key = settings.SECRET
@@ -86,6 +87,22 @@ def course_detail(request, pk):
         "logged_in_user": logged_in_user
         })
 
+@csrf_exempt
+def create_review(request):
+    print(request)
+    global logged_in_user
+    # course = Course.objects.get(id=course_id)
+    if request.method == "POST":
+        print('in post')
+        review_form = ReviewForm(request.POST)
+        print(review_form)
+        if review_form.is_valid:
+            review = review_form.save()
+            # return redirect("learnify/course_detail.html", {"course": course, "logged_in_user": logged_in_user},)
+    else:
+        review_form = ReviewForm()
+    return render(request, 'learnify/review_detail.html', {'review_form': review_form})
+    
 
 def course_create(request):
     if request.method == "POST":
