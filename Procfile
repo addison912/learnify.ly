@@ -1,1 +1,1 @@
-web: gunicorn {name of your project folder}.wsgi --log-file -
+web: gunicorn learnify_django.wsgi --log-file -
