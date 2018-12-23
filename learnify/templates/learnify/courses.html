@@ -20,6 +20,7 @@
             </a>
                 {% if user.is_authenticated and logged_in_user.pk == course.owner_id%} 
                 <a href="{% url 'edit_course' pk=course.id %}"><button class="edit">Edit Course</button><a/>
+                <a href="{% url 'add_video' pk=course.id %}"><button class="add-video-button">Add Video</button></a>
                 {% endif %}
         </div>
     </li>
