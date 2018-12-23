@@ -63,7 +63,6 @@ def courses(request):
         "purchases": purchases
     })
 
-
 def course_detail(request, pk):
     global logged_in_user
     course = Course.objects.get(id=pk)
