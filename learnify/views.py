@@ -63,7 +63,6 @@ def courses(request):
         "purchases": purchases
     })
 
-
 def course_detail(request, pk):
     global logged_in_user
     course = Course.objects.get(id=pk)
@@ -174,7 +173,6 @@ def profile(request, username):
     user = User.objects.get(username=username)
     profile = UserProfile.objects.get(user=user)
     global logged_in_user
-    logged_in_user = profile
     purchases = Purchase.objects.filter(purchaser=profile)
     return render(
         request,
@@ -204,6 +202,9 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request, user)
+                profile = UserProfile.objects.get(user=user)
+                global logged_in_user
+                logged_in_user = profile
                 return redirect(f"profile/{username}")
             else:
                 return HttpResponse("Your account was inactive.")

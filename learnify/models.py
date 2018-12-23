@@ -5,7 +5,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    profile_pic = models.ImageField(upload_to='profile_pics', blank=True)
+    profile_pic = models.ImageField(upload_to='profile_pics', default='profile_pics/user.png')
 
     def __str__(self):
         return self.user.username
@@ -39,8 +39,9 @@ class Course(models.Model):
     owner = models.ForeignKey(
         UserProfile, on_delete=models.CASCADE, related_name='course')
     preview_video = models.FileField(upload_to='preview_videos', blank=True)
-    preview_video_format = models.CharField(
+    video_format = models.CharField(
         choices=VIDEO_FORMAT, max_length=20, default='video/webm')
+    course_image = models.ImageField(upload_to='course_images', blank=True)
 
     def __str__(self):
         return self.title
@@ -60,7 +61,7 @@ class Video(models.Model):
     video_format = models.CharField(
         choices=VIDEO_FORMAT, max_length=20, default='video/webm')
     description = models.TextField(blank=True)
-    order_number = models.IntegerField()
+    lesson_number = models.IntegerField()
     course = models.ForeignKey(
         Course, on_delete=models.CASCADE, related_name='videos')
 

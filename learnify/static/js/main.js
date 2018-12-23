@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('.nav-profile-pic').on('click', function () {
-        $('.nav-dropdown').slideToggle('slow');
+        $('.nav-dropdown').slideToggle();
     });
 
     $('.hamburger').on('click', function () {
