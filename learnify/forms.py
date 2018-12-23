@@ -30,7 +30,7 @@ class VideoForm(forms.ModelForm):
 
     class Meta():
         model = Video
-        fields = ('title', 'description', 'video', 'video_format',  'order_number',)
+        fields = ('title', 'description', 'video', 'video_format',  'lesson_number',)
 
 class ReviewForm(forms.ModelForm):
 
