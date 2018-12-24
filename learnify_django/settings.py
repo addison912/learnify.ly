@@ -15,7 +15,10 @@ import django_heroku
 
 sys.path.append(os.path.abspath(".env/secrets"))
 
-from config import *
+with open('.env/secrets/secret_key.txt') as f:
+    SECRET_KEY = f.read().strip()
+
+# from config import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -139,7 +142,6 @@ SECRET = os.environ.get("STRIPE_SECRET_KEY")
 django_heroku.settings(locals())
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
