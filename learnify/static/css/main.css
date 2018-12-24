@@ -325,6 +325,12 @@ button:hover{
 
 /*//////////// course create form end ////////////*/
 /*//////////// course page start ////////////*/
+.video-container{
+  display: flex;
+  justify-content: center;
+  background: #333;
+  width:100%
+}
 
 .course-container {
   margin: 0;
@@ -403,7 +409,7 @@ button:hover{
   width: 100%;
 }
 
-.video-container {
+.lesson-container {
   margin: 10px 0 0 0;
   display: flex;
   flex-direction: row;
@@ -459,7 +465,6 @@ button:hover{
 }
 
 .title-input {
-  /* border-radius: 100px; */
   width: 300px;
   height: 35px;
   text-align: center;
@@ -485,7 +490,39 @@ button:hover{
   color: #003346;
 }
 
+/*reviews*/
+#review-container {
+  width: 83.33vw;
+}
 
+.review {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  background: #58A2A6;
+  color: whitesmoke;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.review h4 {
+  margin: 0
+}
+
+.review p {
+  margin: 0
+}
+
+.review hr {
+  width: 100%;
+  border: 1px solid whitesmoke;
+}
+
+.review-user {
+  color:#003346
+}
 /*//////////// course detail page end ////////////*/
 .new-course-form {
   width: 100%;
@@ -752,9 +789,8 @@ footer .first-li a {
     height: 100%;
     margin: 0 0 20px 0; 
   }
-  .video-container{
+  .lesson-container{
     flex-direction: column;
-    background: #333;
   }
 }
 
