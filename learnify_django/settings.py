@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 import sys
 import os
-
 import django_heroku
 
 sys.path.append(os.path.abspath(".env/secrets"))
