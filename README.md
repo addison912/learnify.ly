@@ -1,5 +1,9 @@
 # learnify.ly
 
+
+![learnify](https://user-images.githubusercontent.com/42447565/55149317-de8cbc00-5141-11e9-87d7-f93faa1b74fd.jpeg)
+
+
 This was our second project at General Assembly's web development immersive course, and took place in week 8. It was compulsory to use Django as our backend framework. 
 
 The timeframe for this project was 1 week (December 2018).
